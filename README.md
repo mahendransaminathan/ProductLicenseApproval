@@ -6,3 +6,5 @@ https://www.figma.com/design/F4PhIa5Hek18jxaizdPkX6/ProductLicenseApproval?node-
 # Confluence page
 https://rameshbabupeddapalli.atlassian.net/wiki/spaces/ProductLic/overview
 
+# Jira board
+https://rameshbabupeddapalli.atlassian.net/jira/software/projects/PLA/boards/2
