@@ -11,3 +11,6 @@ https://rameshbabupeddapalli.atlassian.net/jira/software/projects/PLA/boards/2
 
 
 # Build Setup
+
+# Web Service 
+dotnet new webapi -o MyWebApiProject
