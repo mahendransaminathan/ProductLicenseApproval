@@ -37,6 +37,7 @@ h1 {
   display: flex;
   flex-direction: column; 
   gap: 15px; /* Space between fields */
+  width: auto;
 }
 .form-group
 {
@@ -47,7 +48,7 @@ h1 {
 label
 {
   font-weight: bold;
-  width: 120px;
+  width: 250px;
   text-align: right;
 }
 
@@ -62,15 +63,28 @@ input
 .submit-button
 {
   padding: 8px 16px;
-  background-color: #007;
+  background-color: #00007f;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  width: auto;
+  max-width: 200px;
+  flex-shrink: 0; /* Prevent the button from shrinking */
+  flex-grow: 0;   /* Prevent the button from growing */
 }
 
 .submit-button:hover
 {
   background-color: #0056b3;
+}
+
+select {
+  width: 250px; /* Set width */
+  height: 40px; /* Set height */
+  font-size: 16px; /* Adjust font size */
+  padding: 5px; /* Add padding for better spacing */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light border */
 }

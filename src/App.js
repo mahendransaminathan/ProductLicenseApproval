@@ -3,9 +3,12 @@ import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import CompanyDetails from './CompanyDetails';
+import { useFormData } from './FormDataContext';
 
 function FormPage() {
-  let [firstname, setFirstName] = useState('');
+
+  const {formData, setFormData} = useFormData();
+  const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [addressline1, setAddressLine1] = useState('');
   const [addressline2, setAddressLine2] = useState('');
@@ -20,16 +23,40 @@ function FormPage() {
     const handleSubmit = (e) => {
       e.preventDefault();  // Prevent form from reloading the page
       //firstname = "John";
-      const formData = {
+      const updatedFormData = { 
+        ...formData,
         firstname,
         lastname,
         addressline1,
         addressline2,
         city,
-        eircode
+        country,
+        eircode,
+        phoneNumber,
+        emailID      
       };
-      navigate('/next');
-      //alert("Form Submitted:" + JSON.stringify(formData, null, 2));
+
+      setFormData(updatedFormData);
+//      navigate('/Company');
+
+    fetch("http://localhost:5012/api/person", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(updatedFormData)
+    })
+      .then(response => {
+        if (!response.ok) {
+          return response.text().then(errorMessage => {
+            throw new Error(`HTTP ${response.status}: ${errorMessage}`);
+          });
+        }
+        return response.json();
+      })
+      .then(data => console.log("Success:", data))
+      .catch(error => console.error("Fetch Error:", error.message));
+      alert("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
       // You can replace the above line with any API call or other logic.
     };
 
@@ -38,16 +65,24 @@ function FormPage() {
     <div className="App">
       <header className="App-header">
         <h1>Product License Approval</h1>
-        <form className='form-container'>
+        <form className='form-container' onSubmit={handleSubmit}>
           <div className='form-group'>
             <label htmlFor="firstname">First Name*</label>
             <input type="text" id="firstname" value={firstname} 
             onChange={(e) => setFirstName(e.target.value)} 
             placeholder='Enter First Your Name'/>
+                   
             <label htmlFor="country">Country</label>
-            <input type="text" id="country" value={country} 
-            onChange={(e) => setCountry(e.target.value)} 
-            placeholder='Enter the Country'/>            
+            <select id="country" name="selectedCountry" value={country} onChange={(e) => setCountry(e.target.value)}>
+              <option value="">Select a Country</option>
+              <option value="UnitedStates">United States</option>
+              <option value="UnitedKingdom">United Kingdom</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Canada">Canada</option>
+              <option value="Japan">Japan</option>
+            </select>     
           </div>
           <div className='form-group'>
             <label htmlFor="lastname">Last Name*</label>
@@ -87,7 +122,7 @@ function FormPage() {
             onChange={(e) => setEirCode(e.target.value)} 
             placeholder='Enter the EirCode'/>
           </div>
-          <button type="submit" onClick={handleSubmit}>Submit</button>          
+          <button type="submit">submit</button>          
           </form>                
       </header>
     </div>   
@@ -96,12 +131,12 @@ function FormPage() {
 
 function App() {
   return (
-    <Router>
+    
       <Routes>
         <Route path="/" element={<FormPage />} />
-        <Route path="/next" element={<CompanyDetails />} />
+        <Route path="/Company" element={<CompanyDetails />} />
       </Routes>
-    </Router>
+    
   );
 }
 export default App;
