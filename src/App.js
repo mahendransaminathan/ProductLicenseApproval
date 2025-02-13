@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import CompanyDetails from './CompanyDetails';
 import { useFormData } from './FormDataContext';
 
 function FormPage() {
@@ -134,7 +133,7 @@ function App() {
     
       <Routes>
         <Route path="/" element={<FormPage />} />
-        <Route path="/Company" element={<CompanyDetails />} />
+        
       </Routes>
     
   );
