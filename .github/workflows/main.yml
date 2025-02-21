@@ -34,6 +34,13 @@ jobs:
       - name: Build the React app
         run: |
           npm run build
+    
+       - name: Azure login
+         uses: azure/login@v1
+         with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
 
       # Step 5: Deploy to Azure App Service
       - name: Deploy to Azure Web App
