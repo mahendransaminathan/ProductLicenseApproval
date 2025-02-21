@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useFormData } from './FormDataContext';
 
 function FormPage() {
@@ -17,7 +17,7 @@ function FormPage() {
   const [emailID, setEmailID] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   
-  const navigate = useNavigate();
+//  const navigate = useNavigate();
     // Submit handler
     const handleSubmit = (e) => {
       e.preventDefault();  // Prevent form from reloading the page
