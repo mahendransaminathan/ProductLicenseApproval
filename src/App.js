@@ -38,7 +38,7 @@ function FormPage() {
       setFormData(updatedFormData);
 //      navigate('/Company');
 
-    fetch("http://localhost:5012/api/person", {
+    fetch("https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
