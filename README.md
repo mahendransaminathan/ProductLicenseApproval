@@ -1,6 +1,6 @@
-1. Create a Web Api service for both Back end and Front End.
-2. Select Node JS 20 runtime stack for Back end.
-3. Select .Net 9 run time stack for Front end.
+1. Create a Azure Web App service for both Back end and Front End.
+2. Select Node JS 20 runtime stack for Front end.
+3. Select .Net 9 run time stack for Back end.
 4. Go to Git Hub Actions from the Front End code Repository and create yml file for the build
 5. Write a code for build, publish and Deploy to Azure Web App Service and commit the code
 6. As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service
