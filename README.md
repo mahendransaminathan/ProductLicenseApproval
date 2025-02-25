@@ -41,7 +41,7 @@
 41. Write a code for build, publish and Deploy to Azure Web App Service and commit the code
 42. As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service
 43. Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top
-44. Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json with the connection string.
+44. Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string.
 45. Create the Database using the following two commands
 1. dotnet ef migrations add InitialCreate
 2. dotnet ef database update
