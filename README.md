@@ -61,8 +61,20 @@ Click on Commit Changes... button from Right hand side of the screen
 As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
 Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
-Go to Azure Portal and search for "Azure SQL Server"
-Create the Azure SQL Server and SQL Database.  
+Go to Azure Portal  
+Search for "Azure SQL Server" and Select SQL Server option under services  
+Click on Create option  
+Select one of the subscription from available subscriptions  
+Select the Resource group same as the resource group selected for two App services  
+Provide a server name under Server Details section  
+Select near by location for Location example "East US 2"  
+Under Authentication section, select "use SQL Authentication" for Authentication method    
+Provide the Server admin login for Server admin login  
+Provide the Password  
+Provide the confirm password same as the password  
+Click on Review + create button  
+Click on Create button from "Review + create" tab  
+
 Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string.  
 Create the Database using the following two commands  
 dotnet ef migrations add InitialCreate  
