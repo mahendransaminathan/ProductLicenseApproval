@@ -44,6 +44,12 @@ Select on Actions option and click on New Repository secret button.
 Provide a name to this secret example Azure_Credentials and paste the service principle from previous step   
 Click on Add Secret button  
 
-Go to Git Hub Actions from the Front End code Repository and create yml file for the build Have your Subscription ID and Front End Web App service name from your Azure Cloud Subscription to create the service principle. Run the following command to create Azure Credentials from Azure Shell. Replace <YOUR_WEBAPP_NAME> with your Azure Web App front end service name and replace YOUR_SUBSCRIPTION_ID with your Azure subscription ID from the following command. az ad sp create-for-rbac --name "<YOUR_WEBAPP_NAME>" --role contributor --scopes /subscriptions/<YOUR_SUBSCRIPTION_ID> --sdk-auth. Copy the output.
+Go to Actions tab   
+Click on New Workflow button from left hand side of the screen    
+Click on set up a workflow yourself link under Choose a workflow    
+Copy the code from the following link https://github.com/mahendransaminathan/ProductLicenseApproval/blob/main/.github/workflows/main.yml and paste it under Edit window    
+Click on Commit Changes... button from Right hand side of the screen  
+As soon as the code is committed, the build will start automatically and the build will be deployed to Azure service   
 
-Write a code for build, publish and Deploy to Azure Web App Service and commit the code As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string. Create the Database using the following two commands dotnet ef migrations add InitialCreate dotnet ef database update
+Write a code for build, publish and Deploy to Azure Web App Service and commit the code  
+As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string. Create the Database using the following two commands dotnet ef migrations add InitialCreate dotnet ef database update
