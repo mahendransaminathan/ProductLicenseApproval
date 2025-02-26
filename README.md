@@ -49,7 +49,8 @@ Click on New Workflow button from left hand side of the screen
 Click on set up a workflow yourself link under Choose a workflow    
 Copy the code from the following link https://github.com/mahendransaminathan/ProductLicenseApproval/blob/main/.github/workflows/main.yml and paste it under Edit window    
 Click on Commit Changes... button from Right hand side of the screen  
-As soon as the code is committed, the build will start automatically and the build will be deployed to Azure service   
+As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
+Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
 Write a code for build, publish and Deploy to Azure Web App Service and commit the code  
 As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string. Create the Database using the following two commands dotnet ef migrations add InitialCreate dotnet ef database update
