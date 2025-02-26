@@ -17,12 +17,12 @@ Under Pricing Plans leave default value for Windows Plan
 Select Free F1 for pricing plan  
 Select Disabled option for Zone Redundancy  
 Click on Review + create button
-Click on Create button from "Review + create" tab
-Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes   
-- Enter Web App Name example ProductLicenseApproval  
-- Select Runtime stack as Node 20 LTS Go to App Services section  
-- Select ProductLicenseApproval service Copy the default domain name example plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net  
--  Open PLAService project from Visual Studio Code and update the WithOrigins method with https://plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net under program.cs file (make sure https:// is included before the url)  
+Click on Create button from "Review + create" tab  
+Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes     
+Enter Web App Name example ProductLicenseApproval    
+Select Runtime stack as Node 20 LTS Go to App Services section    
+Select ProductLicenseApproval service Copy the default domain name example plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net    
+Open PLAService project from Visual Studio Code and update the WithOrigins method with https://plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net under program.cs file (make sure https:// is included before the url)  
 
 Go to App Services section  
 Select PLAService   
