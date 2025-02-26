@@ -1,4 +1,4 @@
-#Build, publish and deploy
+#Build, publish and deploy - Back End Service
 Create an Azure Subscription from portal.azure.com (if not created already)  
 Follow the below steps to create Azure App Service for backend  
 Search for "App Services" and select "App Services" from Services section  
@@ -17,7 +17,8 @@ Under Pricing Plans leave default value for Windows Plan
 Select Free F1 for pricing plan  
 Select Disabled option for Zone Redundancy  
 Click on Review + create button
-Click on Create button from "Review + create" tab  
+Click on Create button from "Review + create" tab
+#Front End Service
 Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes     
 Enter Web App Name example ProductLicenseApproval    
 Select Runtime stack as Node 20 LTS Go to App Services section    
@@ -61,8 +62,9 @@ Click on Commit Changes... button from Right hand side of the screen
 As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
 Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
+#Sql Server
 Go to Azure Portal  
-Search for "Azure SQL Server" and Select SQL Server option under services  
+Search for "SQL Server" and Select SQL Server option under services  
 Click on Create option  
 Select one of the subscription from available subscriptions  
 Select the Resource group same as the resource group selected for two App services  
@@ -75,9 +77,20 @@ Provide the confirm password same as the password
 Click on Review + create button  
 Click on Create button from "Review + create" tab  
 
-Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string.  
-Create the Database using the following two commands  
+#SQL Database
+Search for "SQL Database" and Select SQL Databases option under services  
+Click on Create option  
+Select one of the subscription from available subscriptions   
+Select the Resource group same as the resource group selected for two App services  
+Provide the Database name under Database Details section  
+Select the Server Name as previously created  
+Select configure database under compute + storage section and select minimum storage  
+Click on Review + create button  
+Click on Create button from "Review + create" tab  
+
+Get the connection string from the SQL DB and update the appsettings.json in the Back end code with the connection string    
+Open the Back end code in Visual studio code and Create the Database using the following two commands  
 dotnet ef migrations add InitialCreate  
-dotnet ef database update
+dotnet ef database update  
 
 Select Settings and Default document and bring the Index.html file to the top  
