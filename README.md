@@ -1,4 +1,4 @@
-#Build, publish and deploy - Back End Service
+#Build, publish and deploy - Back End Service  
 Create an Azure Subscription from portal.azure.com (if not created already)  
 Follow the below steps to create Azure App Service for backend  
 Search for "App Services" and select "App Services" from Services section  
@@ -62,7 +62,7 @@ Click on Commit Changes... button from Right hand side of the screen
 As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
 Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
-#Sql Server
+#Sql Server  
 Go to Azure Portal  
 Search for "SQL Server" and Select SQL Server option under services  
 Click on Create option  
@@ -77,7 +77,7 @@ Provide the confirm password same as the password
 Click on Review + create button  
 Click on Create button from "Review + create" tab  
 
-#SQL Database
+#SQL Database  
 Search for "SQL Database" and Select SQL Databases option under services  
 Click on Create option  
 Select one of the subscription from available subscriptions   
