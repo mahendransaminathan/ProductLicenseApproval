@@ -1,51 +1,49 @@
-1. Create an Azure Subscription in Azure Cloud
-2. Create a Azure Web App service for both Back end
-3. Search for Azure Web App Service in Azure cloud and select Azure Web App service
-4. https://portal.azure.com/#create/Microsoft.WebSite
-5. Select Create menu option under App Services
-6. Select Web App option from the drop down menu.
-7. Create Web App Page will be displayed.
-8. Select Subscription and Resource group. Please create a Resource Group if you dont have one.
-9. Enter Web App Name
-10. Select code Radio button for Publish option
-11. Select .Net 9 run time stack for Back end.
-12. Select Windows for Operating System
-13. Select your near by Region for Region option
-14. Under Pricing Plans, Select Free plan
-15. Select Disabled option for Zone Redundancy
-16. Select Review + Create option to create the service
-17. Create a Azure Web App service for Front End.    
-18. Search for Azure Web App Service in Azure cloud and select Azure Web App service
-19. Select Create menu option under App Services
-20. Select Web App option from the drop down menu.
-21. Create Web App Page will be displayed.
-22. Select Subscription and Resource group. Please create a Resource Group if you dont have one.
-23. Enter Web App Name
-24. Select code Radio button for Publish option
-25. Select Node JS 20 runtime stack for Front end
-26. Select Windows for Operating System
-27. Select your near by Region for Region option
-28. Under Pricing Plans, Select Free plan
-29. Select Disabled option for Zone Redundancy
-30. Select Review + Create option to create the service
-31. Once the Azure Web App Front End service is created, get the link and add into the Program.cs file in the Back End code.
-32. Once the Azure Web App Back End service is created, get the link and update the Fetch method within the App.js file to call the Post method 
-33. Go to Git Hub Actions from the Front End code Repository and create yml file for the build
-34. Have your Subscription ID and Front End Web App service name from your Azure Cloud Subscription to create the service principle.
-35. Run the following command to create Azure Credentials from Azure Shell. Replace <YOUR_WEBAPP_NAME> with your Azure Web App front end service name and replace YOUR_SUBSCRIPTION_ID with your Azure subscription ID from the following command. 
-36. az ad sp create-for-rbac --name "<YOUR_WEBAPP_NAME>" --role contributor --scopes /subscriptions/<YOUR_SUBSCRIPTION_ID> --sdk-auth. Copy the output.
-37. Go to Settings under Front end Github repository
-38. Scroll down to select Secrets and Variables under Security section on the left side of the screen
-39. Select on Actions option and click on New Repository secret button. Enter the name for the secret and the copy the output from step 36 under Secret section
-40. Click on Add Secret option. 
-41. Write a code for build, publish and Deploy to Azure Web App Service and commit the code
-42. As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service
-43. Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top
-44. Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string.
-45. Create the Database using the following two commands
-1. dotnet ef migrations add InitialCreate
-2. dotnet ef database update
+#Build, publish and deploy
+Create an Azure Subscription from portal.azure.com (if not created already)
+Follow the below steps to create Azure App Service for backend
+Search for "App Services" and select "App Services" from Services section
+Select Create menu option under App Services
+Select Web App option from the drop down menu
+Create Web App Page will be displayed
+Select one of the subscription from available subscriptions
+Create a new resource group by selecting "Create new" option
+Provide a resource group name example "PLA" and click on Ok button
+Enter Web App Name example PLAService
+Select code Radio button for Publish option
+Select Runtime stack as .Net 9 (STS)
+Select Operating System as Windows
+Select near by region for Region example "East US 2"
+Under Pricing Plans leave default value for Windows Plan
+Select Free F1 for pricing plan
+Select Disabled option for Zone Redundancy
+Click on Review + create button
+Click on Create button from "Review + create" tab
+Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes 
+- Enter Web App Name example ProductLicenseApproval
+- Select Runtime stack as Node 20 LTS Go to App Services section
+- Select ProductLicenseApproval service Copy the default domain name example plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net
+-  Open PLAService project from Visual Studio Code and update the WithOrigins method with https://plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net under program.cs file (make sure https:// is included before the url)
 
-# SpecFlow Test
+Go to App Services section
+Select PLAService 
+Copy the default domain name example plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net 
+Open ProductLicenseApproval project from Visual Studio Code and update the fetch method with https://plaservice-hudjedare6g9b9hh.eastus2-01.azurewebsites.net/api/person under program.cs file (make sure https:// is included before the url and /api/person after the url)
 
+Follow below steps to create the service principle
+Get the subscription ID from Subscriptions service under Azure 
+Get the ProductLicenseApproval App service name from App Services under Azure 
+Go to Azure home and click on cloud shell (which is located at top right corner), 
+select powershell then select the subscription and click on Apply
+Run the following command from Azure Shell by replacing <YOUR_WEBAPP_NAME> with ProductLicenseApproval App service name and YOUR_SUBSCRIPTION_ID with Azure subscription ID.
+az ad sp create-for-rbac --name "<YOUR_WEBAPP_NAME>" --role contributor --scopes /subscriptions/<YOUR_SUBSCRIPTION_ID> --sdk-auth
+Copy the Json from output.
 
+Go to Settings under Front end Github repository 
+Scroll down to select Secrets and Variables under Security section on the left side of the screen 
+Select on Actions option and click on New Repository secret button. 
+Provide a name to this secret example Azure_Credentials and paste the service principle from previous step 
+Click on Add Secret button
+
+Go to Git Hub Actions from the Front End code Repository and create yml file for the build Have your Subscription ID and Front End Web App service name from your Azure Cloud Subscription to create the service principle. Run the following command to create Azure Credentials from Azure Shell. Replace <YOUR_WEBAPP_NAME> with your Azure Web App front end service name and replace YOUR_SUBSCRIPTION_ID with your Azure subscription ID from the following command. az ad sp create-for-rbac --name "<YOUR_WEBAPP_NAME>" --role contributor --scopes /subscriptions/<YOUR_SUBSCRIPTION_ID> --sdk-auth. Copy the output.
+
+Write a code for build, publish and Deploy to Azure Web App Service and commit the code As soon as you commit the code, the build will start automatically and the build will be deployed to Azure service Go to Azure Web App service, Select Settings and Default document and bring the Index.html file to the top Create the Azure SQL Server and SQL Database. Get the connection string from the SQL DB and update the appsettings.json in the Back end with the connection string. Create the Database using the following two commands dotnet ef migrations add InitialCreate dotnet ef database update
