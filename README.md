@@ -18,7 +18,7 @@ Follow the below steps to create Azure App Service for backend
 • Select Disabled option for Zone Redundancy  
 • Click on Review + create button
 • Click on Create button from "Review + create" tab
-#Front End Service
+#Front End Service  
 • Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes     
 • Enter Web App Name example ProductLicenseApproval    
 • Select Runtime stack as Node 20 LTS Go to App Services section    
@@ -45,61 +45,61 @@ Follow the below steps to create Azure App Service for backend
 • Provide a name to this secret example Azure_Credentials and paste the service principle from previous step   
 • Click on Add Secret button  
 
-• Go to Actions tab
-• Click on New Workflow button from left hand side of the screen
-• Click on "set up a workflow yourself" link under "Choose a workflow"
-• Copy the code from the following link https://github.com/mahendransaminathan/ProductLicenseApproval/blob/main/.github/workflows/main.yml and paste it under Edit window
-• Provide a unique yml name to this GitHub action (See a textbox which is next to ./.GitHub/workflows/)
-• Click on Commit Changes... button from Right hand side of the screen
-• As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service
-• Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed
+• Go to Actions tab  
+• Click on New Workflow button from left hand side of the screen  
+• Click on "set up a workflow yourself" link under "Choose a workflow"  
+• Copy the code from the following link https://github.com/mahendransaminathan/ProductLicenseApproval/blob/main/.github/workflows/main.yml and paste it under Edit window  
+• Provide a unique yml name to this GitHub action (See a textbox which is next to ./.GitHub/workflows/)  
+• Click on Commit Changes... button from Right hand side of the screen  
+• As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
+• Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
-• Go to Back end Github repository
-• Go to Actions tab
-• Click on New Workflow button from left hand side of the screen
-• Click on "set up a workflow yourself" link under "Choose a workflow"
-• Copy the code from the following link (https://github.com/mahendransaminathan/PLAService/blob/main/.github/workflows/main.yml) and paste it under Edit window
-• Click on Commit Changes... button from Right hand side of the screen
-• As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service
-• Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed
+• Go to Back end Github repository  
+• Go to Actions tab  
+• Click on New Workflow button from left hand side of the screen  
+• Click on "set up a workflow yourself" link under "Choose a workflow"  
+• Copy the code from the following link (https://github.com/mahendransaminathan/PLAService/blob/main/.github/workflows/main.yml) and paste it under Edit window  
+• Click on Commit Changes... button from Right hand side of the screen  
+• As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
+• Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
-SCM Basic Auth Publishin
-FTP Basic Auth Publishin
-Download publish profile
-Azure_Publish_Profile
+SCM Basic Auth Publishin  
+FTP Basic Auth Publishin  
+Download publish profile  
+Azure_Publish_Profile  
 
-• Go to Azure Portal
-• Search for "SQL" and select "SQL Servers" option under services section
-• Click on Create option
-• Select one of the subscription from available subscriptions
-• Select the Resource group same as the resource group selected for two App services
-• Provide a server name under Server details section example plasqlserver
-• Select near by location for Location example "East US 2"
-• Under Authentication section, select "use SQL Authentication" for Authentication method
-• Provide username for Server admin login example administrator
-• Provide the Password 
-• Provide the confirm password same as the password
-• Click on Review + create button
-• Click on Create button from "Review + create" tab
+• Go to Azure Portal  
+• Search for "SQL" and select "SQL Servers" option under services section  
+• Click on Create option  
+• Select one of the subscription from available subscriptions  
+• Select the Resource group same as the resource group selected for two App services  
+• Provide a server name under Server details section example plasqlserver  
+• Select near by location for Location example "East US 2"  
+• Under Authentication section, select "use SQL Authentication" for Authentication method  
+• Provide username for Server admin login example administrator  
+• Provide the Password   
+• Provide the confirm password same as the password  
+• Click on Review + create button  
+• Click on Create button from "Review + create" tab  
 
-• Search for "SQL" and Select SQL Databases option under services
-• Click on Create option
-• Select one of the subscription from available subscriptions
-• Select the Resource group same as the resource group selected for two App services
-• Provide the Database name under Database Details section example Person
-• Select the Server Name as previously created example plasqlserver
-• Select "configure database" under "compute + storage" section and set "Max vCores" to 1 and click on Apply
-• Click on Review + create button
-• Click on Create button from "Review + create" tab
+• Search for "SQL" and Select SQL Databases option under services  
+• Click on Create option  
+• Select one of the subscription from available subscriptions  
+• Select the Resource group same as the resource group selected for two App services  
+• Provide the Database name under Database Details section example Person  
+• Select the Server Name as previously created example plasqlserver  
+• Select "configure database" under "compute + storage" section and set "Max vCores" to 1 and click on Apply  
+• Click on Review + create button  
+• Click on Create button from "Review + create" tab  
 
-• Click on "Go to resource" button
-• Click on "Show database connection strings" under "Connection strings"
-• Copy the connection string from section "ADO.NET (SQL authentication)"
-• Open backend code in Visual Studio Code
-• Update the appsettings.json with the connection string and update the password
-• Create the Database using the following two commands
-	dotnet ef migrations add InitialCreate
-	dotnet ef database update
+• Click on "Go to resource" button  
+• Click on "Show database connection strings" under "Connection strings"  
+• Copy the connection string from section "ADO.NET (SQL authentication)"  
+• Open backend code in Visual Studio Code  
+• Update the appsettings.json with the connection string and update the password  
+• Create the Database using the following two commands  
+	dotnet ef migrations add InitialCreate  
+	dotnet ef database update  
 
-• Goto SQL server
-• Security->Networking->Selected networks->Add your client->Allow Azure->Save
+• Goto SQL server  
+• Security->Networking->Selected networks->Add your client->Allow Azure->Save  
