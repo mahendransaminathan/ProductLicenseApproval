@@ -54,6 +54,21 @@ Follow the below steps to create Azure App Service for backend
 • As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
 • Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
 
+• Go to Azure Portal and select the PLAService app service  
+• Go to Settings section from left side of the screen and select Configuration section  
+• Under Default settings section, select "on" option for the following two fields   
+• Under Platform settings, Select on option for SCM Basic Auth Publishing credentials   
+• Select on option for FTP Basic Auth Publishing credentials  
+• click on save button to save the changes
+• Click on Download publish profile option to download the publish profile  
+• Open the downloaded the publish profile and copy the content to notepad  
+
+• Go to Settings under Back end Github repository   
+• Scroll down to select Secrets and Variables under Security section on the left side of the screen   
+• Select on Actions option and click on New Repository secret button.   
+• Provide a name to this secret example Azure_Publish_Profile and paste the service principle from notepad   
+• Click on Add Secret button  
+
 • Go to Back end Github repository  
 • Go to Actions tab  
 • Click on New Workflow button from left hand side of the screen  
@@ -62,11 +77,6 @@ Follow the below steps to create Azure App Service for backend
 • Click on Commit Changes... button from Right hand side of the screen  
 • As soon as the code is committed, the build will start automatically and the application will be deployed to Azure service  
 • Under All Workflows section, the green tick will be displayed as soon as the build is completed and the application is deployed  
-
-SCM Basic Auth Publishin  
-FTP Basic Auth Publishin  
-Download publish profile  
-Azure_Publish_Profile  
 
 • Go to Azure Portal  
 • Search for "SQL" and select "SQL Servers" option under services section  
@@ -102,4 +112,9 @@ Azure_Publish_Profile
 	dotnet ef database update  
 
 • Goto SQL server  
-• Security->Networking->Selected networks->Add your client->Allow Azure->Save  
+• Select Security section from left hand side of the screen  
+• Select Networking section under security section  
+• From Selected networks on the right hand side of the screen  
+• Click on Add your client  
+• Select Allow Azure tick box   
+• Click on Save button to save the changes     
