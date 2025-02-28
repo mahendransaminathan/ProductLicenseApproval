@@ -17,8 +17,9 @@ Follow the below steps to create Azure App Service for backend
 • Select Free F1 for pricing plan  
 • Select Disabled option for Zone Redundancy  
 • Click on Review + create button
-• Click on Create button from "Review + create" tab
-#Front End Service  
+• Click on Create button from "Review + create" tab  
+
+# Front End Service  
 • Repeat same steps as backend service as mentioned above to create App Service for Front End application except the following 2 changes     
 • Enter Web App Name example ProductLicenseApproval    
 • Select Runtime stack as Node 20 LTS Go to App Services section    
