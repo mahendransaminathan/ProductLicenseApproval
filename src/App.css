@@ -1,26 +1,31 @@
-.App {
-  background-color: #282c34; /* Dark background */
-  color: white; /* White text */
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 body {
-  color: #333; /* Dark text color */
-  background-color: #F4EAEA; /* Change this to any color you prefer */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
+.container {
+  max-width: 600px;
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  color: gray;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 .App-header {
-  background-color: #282c34;
+  background-color: #F4EAEA;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,8 +35,15 @@ body {
   color: #F4EAEA;
 }
 
+@media (max-width: 768px) {
+  .App-header {
+    font-size: 16px; /* Reduce font size */
+    padding: 10px;
+  }
+}
+
 h1 {
-  position: fixed;  /* Keeps it at the top even when scrolling */
+  position: absolute;  /* Keeps it at the top even when scrolling */
   top: 5px;        /* Distance from the top */
   left: 10px;       /* Distance from the left */
   text-align: left;
@@ -43,35 +55,81 @@ h1 {
   font-weight: bold; /* Keep it readable */
   z-index: 1000;    /* Ensures it stays above other elements */
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 12px;
+    top: 5px;
+    left: 5px;
+    padding: 3px;
+  }
+}
 
-.form-container {
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.form-group {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  
-  width: 80%; /* Adjust width as needed */
-  margin: auto; /* Center the form */
-  
-  padding: 20px;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 20px; /* Space between columns */
+  width: 100%; /* Full width of the container */
+}
 
-  top: 100px;   /* Adjust for spacing from the top */
-  left: 100px;  /* Adjust for spacing from the left */
-  /*display: flex;*/
-  /*flex-direction: column;*/ 
-  gap: 30px; /* Space between fields */
-  width: auto;
-  
-  height: auto; /* Set the height */
-  background-color: #F4EAEA; /* White background */
-}
-.form-group
-{
+.form-item {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Aligns label and input vertically */
-  gap: 2px; /* Space between label and input */
-  width: 100%; /* Ensure full width */
-  flex-wrap: wrap; /* Allows responsiveness if needed */
+  flex-direction: column; /* Stack label and input vertically */
 }
+
+.form-group1 {
+  display: flex;
+  flex-direction: column; /* Stack label and input vertically */
+}
+
+label {
+  font-weight: bold;
+  font-size: 17px;
+  color: #000000;
+  margin-bottom: 5px; /* Space between label and input */
+}
+
+input,
+select {
+  padding: 8px;
+  width: 520;
+  height: 75;
+  border: 1px solid #ccc;
+  
+  background-color: #E5E5E5;
+  color: #333;
+}
+
+input::placeholder,
+select::placeholder {
+  color: #888;
+  font-size: 14px;
+}
+
+input:hover,
+select:hover {
+  border-color: #007bff;
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+  }
+}
+
 .heading-label {
   grid-column: 1 / -1; /* Spans across both columns */
   text-align: center;  /* Centers the text */
@@ -91,40 +149,18 @@ label
   margin-bottom: 0px; /* Optional: fine-tune space below the label */
 }
 
-input
-{
-  padding: 8px;
-  width: 250px;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  color:#E5E5E5;
-  background-color: #E5E5E5; 
-  margin-top: 0px;
-  margin-bottom: 0px;
-  
-}
-input::placeholder, 
-select::placeholder {
-  color: #888; /* Black placeholder text */
-  font-style: normal; /* Remove italic if not needed */
-  font-size: 14px; /* Adjust size as needed */
-  opacity: 1; /* Ensure full visibility */
-}
-
-input:hover {
-  border-color: #007bff; /* Change border color to blue */
-  background-color: #e0e0e0; /* Light gray background on hover */
-  color: #333; /* Dark text color on hover for better contrast */
-}
 
 .button-container {
   display: flex;
-  justify-content: flex-end; /* Moves the button to the right */
+  justify-content: center; /* Moves the button to the right */
   width: 100%; /* Ensures it takes full width of the form */
   grid-column: 2 / 3; /* Places the button in the second column */
 }
-
+@media (min-width: 768px) {
+  .button-container {
+    justify-content: flex-end; /* Align to right on larger screens */
+  }
+}
 button
 {
   padding: 8px 16px;
