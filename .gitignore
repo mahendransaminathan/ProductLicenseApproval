@@ -10,7 +10,14 @@
 
 # production
 /build
-
+/obj/*
+/bin
+[oO]bj/
+/SpecFlowTests/bin
+/SpecFlowTests/obj
+/SpecFlowTests/TestResults
+/SpecFlowTests/Reports
+/SpecFlowTests/Reports/*
 # misc
 .DS_Store
 .env.local
