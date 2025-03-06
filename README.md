@@ -1,3 +1,17 @@
+# ProductLicenseApproval
+
+# UI/UX Design
+https://www.figma.com/design/F4PhIa5Hek18jxaizdPkX6/ProductLicenseApproval?node-id=0-1&p=f&t=qVgDibYcwMIIVYnV-0
+
+# Confluence page
+https://rameshbabupeddapalli.atlassian.net/wiki/spaces/ProductLic/overview
+
+# Jira board
+https://rameshbabupeddapalli.atlassian.net/jira/software/projects/PLA/boards/2
+
+# Web Service 
+dotnet new webapi -o MyWebApiProject
+
 # Build, publish and deploy - Back End Service  
 Create an Azure Subscription from portal.azure.com (if not created already)  
 Follow the below steps to create Azure App Service for backend  
