@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   margin: 0;
-  padding: 20px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@ body {
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   color: gray;
-  justify-content: center;
+  
   
 }
 
@@ -40,7 +40,7 @@ form {
 }
 .App-header {
   background-color: #F4EAEA;
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,6 +93,7 @@ h1 {
   grid-template-columns: 1fr 1fr; /* Two equal-width columns */
   gap: 20px; /* Space between columns */
   width: 100%; /* Full width of the container */
+  height: auto;
 }
 
 .form-item {
@@ -162,6 +163,7 @@ label
   display: flex;
   justify-content: left; /* Moves the button to the right */
   width: 100%; /* Ensures it takes full width of the form */
+  margin-left: -110px; /* Optional: fine-tune the button position */
  /* grid-column: 1 / 3; /* Places the button in the second column */
   
   
