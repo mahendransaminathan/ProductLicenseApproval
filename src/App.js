@@ -57,7 +57,7 @@ function FormPage() {
       .catch(error => console.error("Fetch Error:", error.message));
       alert("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
       // You can replace the above line with any API call or other logic.
-      Console.log("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
+      console.log("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
 
     };
 
