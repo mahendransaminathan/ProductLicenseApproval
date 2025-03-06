@@ -11,7 +11,11 @@ body {
 }
 
 .container {
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  gap: 20px; /* Space between columns */
+  width: 1500px;
+  height: 704px;
   background: #f0f0f0;
   padding: 20px;
   border-radius: 10px;
@@ -19,10 +23,18 @@ body {
   color: gray;
 }
 
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
 form {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  width: 1280px;
+  height: 1024px;
 }
 .App-header {
   background-color: #F4EAEA;
@@ -72,9 +84,7 @@ h1 {
     width: 90%; /* Adjust width for smaller screens */
   }
 }
-* {
-  box-sizing: border-box;
-}
+
 
 .form-group {
   display: grid;
@@ -88,11 +98,6 @@ h1 {
   flex-direction: column; /* Stack label and input vertically */
 }
 
-.form-group1 {
-  display: flex;
-  flex-direction: column; /* Stack label and input vertically */
-}
-
 label {
   font-weight: bold;
   font-size: 17px;
@@ -100,11 +105,12 @@ label {
   margin-bottom: 5px; /* Space between label and input */
 }
 
-input,
-select {
+input
+{
+  box-sizing: border-box; /* Include padding in the width */
   padding: 8px;
-  width: 520;
-  height: 75;
+  width: 520px;
+  height: 75px;
   border: 1px solid #ccc;
   
   background-color: #E5E5E5;
@@ -152,13 +158,15 @@ label
 
 .button-container {
   display: flex;
-  justify-content: center; /* Moves the button to the right */
+  justify-content: left; /* Moves the button to the right */
   width: 100%; /* Ensures it takes full width of the form */
-  grid-column: 2 / 3; /* Places the button in the second column */
+ /* grid-column: 1 / 3; /* Places the button in the second column */
+  
+  
 }
 @media (min-width: 768px) {
   .button-container {
-    justify-content: flex-end; /* Align to right on larger screens */
+  justify-content: flex-end; /* Align to right on larger screens */
   }
 }
 button
@@ -170,21 +178,23 @@ button
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  width: auto;
-  max-width: 200px;
+  width: 240px;
+  height: 75px;
+  
   flex-shrink: 0; /* Prevent the button from shrinking */
   flex-grow: 0;   /* Prevent the button from growing */
-  align-self: flex-end; /* Moves button to the right in a flex container */
+  /*align-self: flex-end; /* Moves button to the right in a flex container */
+ /* margin-left: auto; /* Moves the button to the right */
 }
 
 .submit-button:hover
 {
-  background-color: #0056b3;
+  background-color: gray;
 }
 
 select {
-  width: 270px; /* Set width */
-  height: 40px; /* Set height */
+  width: 520px; /* Set width */
+  height: 75px; /* Set height */
   font-size: 16px; /* Adjust font size */
   padding: 5px; /* Add padding for better spacing */
   border-radius: 0px; /* Rounded corners */

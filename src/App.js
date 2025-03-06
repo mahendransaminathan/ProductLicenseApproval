@@ -57,6 +57,8 @@ function FormPage() {
       .catch(error => console.error("Fetch Error:", error.message));
       alert("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
       // You can replace the above line with any API call or other logic.
+      Console.log("Form Submitted:" + JSON.stringify(updatedFormData, null, 2));
+
     };
 
   return (
@@ -81,81 +83,73 @@ function FormPage() {
               />
             </div>
             <div className='form-item'>
-              <label htmlFor="country">Country</label>
-              <select
-                id="country"
-                name="selectedCountry"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value="Select a Country">Select a Country</option>
-                <option value="UnitedStates">United States</option>
-                <option value="UnitedKingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="Canada">Canada</option>
-                <option value="Japan">Japan</option>
-              </select>
-            </div>
-          </div>
-
-          <div className='form-group'>
-            <div className='form-item'>
               <label htmlFor="lastname">Last Name*</label>                
               <input type="text" id="lastname" value={lastname} 
               onChange={(e) => setLastName(e.target.value)}
               placeholder='Enter Your Last Name'/>
             </div>
-            <div className='form-item'>              
-              <label htmlFor="emailID">EmailID*</label>
-              <input type="text" id="emailID" value={emailID} 
-              onChange={(e) => setEmailID(e.target.value)} 
-              placeholder='Enter Your EmailID'/>
-            
-            </div>
-          </div>
-          <div className='form-group'>
             <div className='form-item'>
-            <label htmlFor="addressline1">Address Line1</label>
-            <input type="text" id="addressline1" value={addressline1} 
-            onChange={(e) => setAddressLine1(e.target.value)} 
-            placeholder='Enter the Address Line'/>
+              <label htmlFor="addressline1">Address Line1</label>
+              <input type="text" id="addressline1" value={addressline1} 
+              onChange={(e) => setAddressLine1(e.target.value)} 
+              placeholder='Enter the Address Line'/>
             </div>
             <div className='form-item'>
-            <label htmlFor="phoneNumber">Phone Number</label>            
-            <input type="text" id="phoneNumber" value={phoneNumber} 
-            onChange={(e) => setPhoneNumber(e.target.value)} 
-            placeholder='Enter Your Phone Numbr'/>
+              <label htmlFor="addressline2">Address Line2</label>
+              <input type="text" id="addressline2" value={addressline2} 
+              onChange={(e) => setAddressLine2(e.target.value)} 
+              placeholder='Enter the address line2'/>
             </div>
-          </div>
-          
-          <div className='form-group'>
-            <div className='form-item'>
 
-            <label htmlFor="addressline2">Address Line2</label>
-            <input type="text" id="addressline2" value={addressline2} 
-            onChange={(e) => setAddressLine2(e.target.value)} 
-            placeholder='Enter the address line2'/>
+            <div className='form-item'>
+              <label htmlFor="city">City</label>
+              <input type="text" id="City" value={city} 
+              onChange={(e) => setCity(e.target.value)} 
+              placeholder='Enter Your city'/>
             </div>
             <div className='form-item'>
-            <label htmlFor="city">City</label>
-            <input type="text" id="City" value={city} 
-            onChange={(e) => setCity(e.target.value)} 
-            placeholder='Enter Your city'/>
-            </div>
+              <label htmlFor="EirCode">Eircode</label>
+              <input type="text" id="eircode" value={eircode} 
+              onChange={(e) => setEirCode(e.target.value)} 
+              placeholder='Enter the EirCode'/>
+            </div>               
+          </div>
+
+          <div className='form-group'>            
             <div className='form-item'>
-            <label htmlFor="EirCode">Eircode</label>
-            <input type="text" id="eircode" value={eircode} 
-            onChange={(e) => setEirCode(e.target.value)} 
-            placeholder='Enter the EirCode'/>
-            </div>   
-          </div>
-                  
-             
-          <div class="button-container">
-            <button type="submit">Submit</button>          
-          </div>
+                <label htmlFor="country">Country</label>
+                <select
+                  id="country"
+                  name="selectedCountry"
+                  value={country}
+                  onChange={(e) => setCountry(e.target.value)}
+                >
+                  <option value="Select a Country">Select a Country</option>
+                  <option value="UnitedStates">United States</option>
+                  <option value="UnitedKingdom">United Kingdom</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Japan">Japan</option>
+                </select>
+              </div>
+              <div className='form-item'>              
+                <label htmlFor="emailID">EmailID*</label>
+                <input type="text" id="emailID" value={emailID} 
+                onChange={(e) => setEmailID(e.target.value)} 
+                placeholder='Enter Your EmailID'/>              
+              </div>            
+                <div className='form-item'>
+                <label htmlFor="phoneNumber">Phone Number</label>            
+                <input type="text" id="phoneNumber" value={phoneNumber} 
+                onChange={(e) => setPhoneNumber(e.target.value)} 
+                placeholder='Enter Your Phone Numbr'/>
+              </div>
+              <div class="button-container">
+                <button type="submit">Submit</button>          
+              </div>
+          </div>         
 
           </form>                
       </header>
