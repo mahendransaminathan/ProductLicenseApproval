@@ -9,13 +9,19 @@ function FormPage() {
   const {formData, setFormData} = useFormData();
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
-  const [addressline1, setAddressLine1] = useState('');
+  const [addressline, setAddressLine] = useState('');
   const [addressline2, setAddressLine2] = useState('');
   const [city, setCity] = useState('');
   const [eircode, setEirCode] = useState('');
   const [country, setCountry] = useState('');
   const [emailID, setEmailID] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [gender, setGender] = useState("");
+  const [phone, setPhone] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+  const [dob, setDob] = useState("");
+  
   
 //  const navigate = useNavigate();
     // Submit handler
@@ -26,9 +32,10 @@ function FormPage() {
         ...formData,
         firstname,
         lastname,
-        addressline1,
+        addressline,
         addressline2,
         city,
+        dob,
         country,
         eircode,
         phoneNumber,
@@ -69,55 +76,52 @@ function FormPage() {
         <form className='space-y-4' onSubmit={handleSubmit}>
         
           <label htmlFor="Heading" className="heading-label">
-            Submit your Details for License Approval
+            License Approval Form
           </label>
-          <div className='form-group'>
-            <div className='form-item'>
-              <label htmlFor="firstname">First Name*</label>
-              <input
-                type="text"
-                id="firstname"
-                value={firstname}
-                onChange={(e) => setFirstName(e.target.value)}
-                placeholder='Enter Your First Name'
-              />
-            </div>
-            <div className='form-item'>
-              <label htmlFor="lastname">Last Name*</label>                
-              <input type="text" id="lastname" value={lastname} 
-              onChange={(e) => setLastName(e.target.value)}
-              placeholder='Enter Your Last Name'/>
-            </div>
-            <div className='form-item'>
-              <label htmlFor="addressline1">Address Line1</label>
-              <input type="text" id="addressline1" value={addressline1} 
-              onChange={(e) => setAddressLine1(e.target.value)} 
-              placeholder='Enter the Address Line'/>
-            </div>
-            <div className='form-item'>
-              <label htmlFor="addressline2">Address Line2</label>
-              <input type="text" id="addressline2" value={addressline2} 
-              onChange={(e) => setAddressLine2(e.target.value)} 
-              placeholder='Enter the address line2'/>
-            </div>
-
-            <div className='form-item'>
-              <label htmlFor="city">City</label>
-              <input type="text" id="City" value={city} 
-              onChange={(e) => setCity(e.target.value)} 
-              placeholder='Enter Your city'/>
-            </div>
-            <div className='form-item'>
-              <label htmlFor="EirCode">Eircode</label>
-              <input type="text" id="eircode" value={eircode} 
-              onChange={(e) => setEirCode(e.target.value)} 
-              placeholder='Enter the EirCode'/>
-            </div>               
+          
+          <div className="name-grid">
+            <label htmlFor="PersonsName">Person's Name</label>
+            <input
+              type="text"
+              id="first"
+              value={firstname}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder='First'
+            />                                          
+            <input type="text" id="last" value={lastname} 
+            onChange={(e) => setLastName(e.target.value)}
+            placeholder='Last'/>
           </div>
 
-          <div className='form-group'>            
-            <div className='form-item'>
-                <label htmlFor="country">Country</label>
+          <div className="gender-grid">
+            <label htmlFor="Gender">Gender</label>
+            <label><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)} required /> Male</label>
+            <label><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} required /> Female</label>
+            </div>
+
+            <div className="phone-grid">
+            <label htmlFor="phone">Phone</label>
+            <input type="tel" placeholder="Phone (### ### ####)" value={phone} onChange={(e) => setPhone(e.target.value)} className="border p-2 w-full" required />
+          </div>
+
+          
+        <div className="dob-grid">
+        <label htmlFor="dob">Date of Birth</label>
+        <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="border p-2 w-full" required />
+        </div>
+
+
+          <div className="address-grid">
+        
+            <label htmlFor="street">Address</label>
+            <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full" required />
+        
+            <div className="fulladdress-grid">  
+                  
+            <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="border p-2 w-full" required />        
+            <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="border p-2 w-full" required />        
+            
+            
                 <select
                   id="country"
                   name="selectedCountry"
@@ -133,23 +137,23 @@ function FormPage() {
                   <option value="Canada">Canada</option>
                   <option value="Japan">Japan</option>
                 </select>
-              </div>
-              <div className='form-item'>              
+
+            <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="border p-2 w-full" required />        
+            </div>
+          </div>
+
+              
+              <div className="email-grid">
                 <label htmlFor="emailID">EmailID*</label>
                 <input type="text" id="emailID" value={emailID} 
                 onChange={(e) => setEmailID(e.target.value)} 
                 placeholder='Enter Your EmailID'/>              
               </div>            
-                <div className='form-item'>
-                <label htmlFor="phoneNumber">Phone Number</label>            
-                <input type="text" id="phoneNumber" value={phoneNumber} 
-                onChange={(e) => setPhoneNumber(e.target.value)} 
-                placeholder='Enter Your Phone Numbr'/>
-              </div>
+              
               <div class="button-container">
                 <button type="submit">Submit</button>          
               </div>
-          </div>         
+                   
 
           </form>                
       </header>

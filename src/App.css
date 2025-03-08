@@ -1,9 +1,8 @@
-
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f9;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,202 +10,184 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-  gap: 20px; /* Space between columns */
-  width: 1500px;
-  height: 704px;
-  background: #f0f0f0;
+  max-width: 600px;
+  background: #DCB32C;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  color: gray;
-  
-  
+  color: DCB32C;
+  width: 900px;
+  height: 750px;
+  gap: 50px;
 }
 
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    width: 100%;
-  }
+h2 {
+  text-align: center;
+  color: #000;
+  font-size: 30px; /* Adjust the size as needed */
+  font-weight: normal; /* Ensures text is not bold */
 }
+.line {
+  border: none; /* Removes the default border style */
+  border-top: 1px solid #000; /* Adds a thin gray line */
+  margin-top: 10px; /* Adds space above the line */
+  margin-bottom: 10px; /* Adds space below the line */
+}
+
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  width: 1280px;
-  height: 1024px;
-}
-.App-header {
-  background-color: #F4EAEA;
-  min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #F4EAEA;
+  gap: 20px;
+  color: DCB32C;
 }
 
-@media (max-width: 768px) {
-  .App-header {
-    font-size: 16px; /* Reduce font size */
-    padding: 10px;
-  }
-}
-
-h1 {
-  position: absolute;  /* Keeps it at the top even when scrolling */
-  top: 5px;        /* Distance from the top */
-  left: 10px;       /* Distance from the left */
-  text-align: left;
-  color: #00007f;   /* Dark blue text color */
-  background-color: #f4f4f4; /* Optional: Light background */
-  padding: 10px;    /* Padding for spacing */
-  width: auto;      /* Adjust width dynamically */
-  font-size: 16px;  /* Reduce font size */
-  font-weight: bold; /* Keep it readable */
-  z-index: 1000;    /* Ensures it stays above other elements */
-}
-@media (max-width: 768px) {
-  h1 {
-    font-size: 12px;
-    top: 5px;
-    left: 5px;
-    padding: 3px;
-  }
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .form-container {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    width: 90%; /* Adjust width for smaller screens */
-  }
-}
-
-
-.form-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
-  gap: 20px; /* Space between columns */
-  width: 100%; /* Full width of the container */
-  height: auto;
-}
-
-.form-item {
-  display: flex;
-  flex-direction: column; /* Stack label and input vertically */
-}
-
-label {
-  font-weight: bold;
-  font-size: 17px;
-  color: #000000;
-  margin-bottom: 5px; /* Space between label and input */
-}
-
-input
-{
-  box-sizing: border-box; /* Include padding in the width */
-  padding: 8px;
-  width: 520px;
-  height: 75px;
+/* Custom styles for input */
+input {
+  color: gray;
+  background-color: #d3d3d3;
   border: 1px solid #ccc;
-  
-  background-color: #E5E5E5;
-  color: #333;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
-input::placeholder,
-select::placeholder {
-  color: #888;
-  font-size: 14px;
-}
-
-input:hover,
-select:hover {
+/* Focused state for input */
+input:focus {
   border-color: #007bff;
-  background-color: #e0e0e0;
-  color: #333;
+  outline: none;
 }
 
-@media (max-width: 768px) {
-  .form-group {
-    grid-template-columns: 1fr; /* Single column layout for small screens */
-  }
+.prfname {
+  color: gray; /* Change text color */
+  background-color: #d3d3d3; /* Change background */
+  border: 1px solid #ccc; /* Add border */
 }
 
-.heading-label {
-  grid-column: 1 / -1; /* Spans across both columns */
-  text-align: center;  /* Centers the text */
-  font-size: 20px; /* Adjust the font size */
-  font-weight: bold; /* Make it bold */
-  margin-bottom: 15px; /* Add spacing below */
-  width: 100%; /* Ensures full width */
-}
-
-label
-{
-  font-weight: bold;
-  width: 250px;
-  font-size: 17px; /* Reduce font size */
-  text-align: left;
-  color: #000000;
-  margin-bottom: 0px; /* Optional: fine-tune space below the label */
-}
-
-
-.button-container {
-  display: flex;
-  justify-content: left; /* Moves the button to the right */
-  width: 100%; /* Ensures it takes full width of the form */
-  margin-left: -110px; /* Optional: fine-tune the button position */
- /* grid-column: 1 / 3; /* Places the button in the second column */
+.name-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  /*grid-template-columns: repeat(auto-fit, minmax(120px, 1fr, 1fr)); */
+  gap: 10px; /* Space between inputs */
   
+  color: gray;
+  width: 260px;
+  height: 50px;
+}
+
+label[htmlFor="prn"] {
+  display: inline-block; /* Make label an inline-block so it can have width */
+  width: 50%; /* Set a fixed width */
+  margin-bottom: 5px; /* Space below the label */
+  font-weight: bold; /* Optional: Make the label bold */
+}
+
+.gender-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
   
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
 }
-@media (min-width: 768px) {
-  .button-container {
-  justify-content: flex-end; /* Align to right on larger screens */
-  }
+
+.phone-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
 }
-button
-{
-  padding: 8px 16px;
-  background-color: #00007f;
+
+
+.email-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.dob-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+.address-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+}
+
+
+.fulladdress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Reduce label width to 80px */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+  grid-column: 2 / 3; /* Make fulladdress-grid start in the second column */
+}
+
+
+
+/* Style the checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Removes default styling */
+  width: 18px;
+  height: 18px;
+  background-color: #d3d3d3; /* Light gray */
+  border: 2px solid #a9a9a9; /* Darker gray border */
+  border-radius: 3px; /* Slightly rounded corners */
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/* Change color when checkbox is checked */
+input[type="checkbox"]:checked {
+  background-color: #808080; /* Medium gray */
+  border-color: #696969;
+}
+
+/* Add a checkmark when checked */
+input[type="checkbox"]::before {
+  content: "✔"; /* Unicode checkmark */
+  font-size: 14px;
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+/* Show checkmark when checked */
+input[type="checkbox"]:checked::before {
+  display: block;
+}
+
+/* Styles for the button */
+button {
+  background-color: #000000;
+  color: white;
+  padding: 10px;
   border: none;
+  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
-  width: 240px;
-  height: 75px;
-  
-  flex-shrink: 0; /* Prevent the button from shrinking */
-  flex-grow: 0;   /* Prevent the button from growing */
-  /*align-self: flex-end; /* Moves button to the right in a flex container */
- /* margin-left: auto; /* Moves the button to the right */
 }
 
-.submit-button:hover
-{
-  background-color: gray;
-}
-
-select {
-  width: 520px; /* Set width */
-  height: 75px; /* Set height */
-  font-size: 16px; /* Adjust font size */
-  padding: 5px; /* Add padding for better spacing */
-  border-radius: 0px; /* Rounded corners */
-  border: 1px solid #ccc; /* Light border */
-  color:#E5E5E5;
-  background-color: #E5E5E5; 
-}
-select option {
-  color: #000; /* Set text color inside the dropdown options */
-  background-color: #fff; /* Set the background color for the options */
+button:hover {
+  background-color: #0056b3;
 }
