@@ -1,24 +1,28 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: #DCB32C;
   margin: 0;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  
+  width: 100vw; /* Ensure it takes the full width */
+  height: 100vh; /* Ensure it takes the full height */
 }
 
 .container {
-  max-width: 600px;
-  background: #DCB32C;
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  width: 1200px;
+  height: 750px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  color: DCB32C;
-  width: 900px;
-  height: 750px;
-  gap: 50px;
+  background: #DCB32C;
 }
 
 h2 {
@@ -36,10 +40,13 @@ h2 {
 
 
 form {
-  display: flex;
-  flex-direction: column;
+  display: flex;  
   gap: 20px;
   color: DCB32C;
+  flex-direction: column;
+  align-items: center; /* Center all form elements */
+  justify-content: center;
+  
 }
 
 /* Custom styles for input */
@@ -75,6 +82,17 @@ input:focus {
   height: 50px;
 }
 
+.names-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Reduce label width to 80px */
+  /*grid-template-columns: repeat(auto-fit, minmax(120px, 1fr, 1fr)); */
+  gap: 10px; /* Space between inputs */
+  
+  color: gray;
+  width: 260px;
+  height: 50px;
+}
+
 label[htmlFor="prn"] {
   display: inline-block; /* Make label an inline-block so it can have width */
   width: 50%; /* Set a fixed width */
@@ -85,10 +103,23 @@ label[htmlFor="prn"] {
 .gender-grid {
   display: grid;
   grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  justify-content: left; /* Center vertically */
+  align-items: left; /* Center horizontally */
   
   gap: 10px; /* Space between inputs */
   width: 100%;
   color: gray;
+}
+.genders-grid {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  
+  gap: 10px; /* Space between inputs */
+  width: 100%;
+  color: gray;
+  
 }
 
 .phone-grid {
@@ -98,6 +129,8 @@ label[htmlFor="prn"] {
   gap: 10px; /* Space between inputs */
   width: 100%;
   color: gray;
+  width: 300px;
+  height: 50px;
 }
 
 
@@ -108,6 +141,9 @@ label[htmlFor="prn"] {
   gap: 10px; /* Space between inputs */
   width: 100%;
   color: gray;
+  width: 260px;
+  height: 50px;
+
 }
 
 .dob-grid {
@@ -117,15 +153,19 @@ label[htmlFor="prn"] {
   gap: 10px; /* Space between inputs */
   width: 100%;
   color: gray;
+  width: 260px;
+  height: 50px;
+
 }
 
 .address-grid {
   display: grid;
-  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
+  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
   
   gap: 10px; /* Space between inputs */
   width: 100%;
   color: gray;
+  
 }
 
 
@@ -186,8 +226,51 @@ button {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: -125px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Moves button to the right */
+  width: 600px; /* Match form width */
+  padding-top: 10px; /* Adds some spacing from inputs */
+  color: #00007F;
 }
 
 button:hover {
   background-color: #0056b3;
+}
+
+.name-grid,
+.names-grid,
+.gender-grid,
+.phone-grid,
+.email-grid,
+.dob-grid,
+.address-grid,
+.fulladdress-grid,
+.email-grid {
+  display: grid;
+  justify-content: left; /* Centers content horizontally */
+  align-items: left; /* Centers content vertically */
+  width: 600px;
+}
+label {
+  text-align: left;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  color: #000;
+}
+
+
+select {
+  color: gray; /* Text color */
+  background-color: #d3d3d3; /* Background color */
+  border: 1px solid #ccc; /* Border style */
+  padding: 10px; /* Spacing inside the dropdown */
+  font-size: 16px; /* Text size */
+  border-radius: 5px; /* Rounded corners */
+  appearance: none; /* Removes default OS styling */
+  cursor: pointer;
 }

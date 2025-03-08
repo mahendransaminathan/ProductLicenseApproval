@@ -81,24 +81,27 @@ function FormPage() {
           
           <div className="name-grid">
             <label htmlFor="PersonsName">Person's Name</label>
-            <input
-              type="text"
-              id="first"
-              value={firstname}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder='First'
-            />                                          
-            <input type="text" id="last" value={lastname} 
-            onChange={(e) => setLastName(e.target.value)}
-            placeholder='Last'/>
+            <div className="names-grid">
+              <input
+                type="text"
+                id="first"
+                value={firstname}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder='First'
+              />                                          
+              <input type="text" id="last" value={lastname} 
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder='Last'/>
+            </div>
           </div>
 
           <div className="gender-grid">
             <label htmlFor="Gender">Gender</label>
+            <div className="genders-grid">
             <label><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)} required /> Male</label>
             <label><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} required /> Female</label>
             </div>
-
+          </div>
             <div className="phone-grid">
             <label htmlFor="phone">Phone</label>
             <input type="tel" placeholder="Phone (### ### ####)" value={phone} onChange={(e) => setPhone(e.target.value)} className="border p-2 w-full" required />
