@@ -39,7 +39,18 @@ h2 {
   margin-bottom: 10px; /* Adds space below the line */
 }
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.heading-label {
+  display: flex; 
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;  /* Centers vertically */
+  height: 5vh;  /* Full height to center vertically */
+  font-size: 24px;  /* Adjust font size */
+  font-weight: bold;  /* Make it bold */
+  text-align: center;  /* Center text inside */
 }
 
 
@@ -225,8 +236,8 @@ button {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  margin-right: -125px;
-  width: 20%;
+  margin: auto;
+  
 }
 .button-container {
   display: flex;
@@ -271,14 +282,10 @@ button:hover {
 .email-grid input, 
 .dob-grid input {
   max-width: 260px;  /* Increase max-width */
-}
-
-/* Make sure the input fields inside phone-grid, dob-grid, and email-grid take full width */
-.phone-grid input, 
-.dob-grid input, 
-.email-grid input {
   width: 100%;
 }
+
+  
 
 label {
   text-align: left;
@@ -356,21 +363,30 @@ select {
     font-size: 20px; /* Further reduce font size for mobile */
   }
 
-  .address-grid, .fulladdress-grid, 
-  .phone-grid, .email-grid, .dob-grid {
-    width: 100%;
-    grid-template-columns: 1fr; /* Stack all form fields */
+  .address-grid {
+    
+    display: grid;
+    grid-template-columns: 1fr; /* Ensure single column on small screens */
+    gap: 10px; /* Keep spacing consistent */
+    
+  }
+
+  .fulladdress-grid {
+    grid-column: auto; /* Remove forced column placement */
   }
 
   .phone-grid,
   .email-grid,
   .dob-grid {
+    
+    grid-template-columns: 1fr; /* Stack all form fields */
+  
     justify-content: center;
     align-items: center;
   }
 
     .button-container {
-    justify-content: center; /* Center button on smaller screens */
+    justify-content: left; /* Center button on smaller screens */
     width: 100%;
   }
 
@@ -385,5 +401,20 @@ select {
 .name-grid, .names-grid, .gender-grid, .genders-grid{
  
   grid-template-columns: 1fr; /* Stack all form fields */
+  max-width: 260px; /* Limit input width */
+  justify-content: start; /* Center button on smaller screens */
+  align-items: start; /* Centers content vertically */
+  text-align: left;
 }
+
+form {
+  align-items: flex-start; /* Align form elements to the left */
+  text-align: left; /* Ensure all text inside is left-aligned */
+}
+
+label {
+  text-align: left;
+  justify-content: flex-start;
+}
+
 }
