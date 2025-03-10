@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useFormData } from './FormDataContext';
 
+
 function FormPage() {
 
   const {formData, setFormData} = useFormData();
@@ -166,12 +167,9 @@ function FormPage() {
 
 function App() {
   return (
-    
       <Routes>
-        <Route path="/" element={<FormPage />} />
-        
-      </Routes>
-    
+        <Route path="/" element={<FormPage />} />        
+      </Routes>    
   );
 }
 export default App;
