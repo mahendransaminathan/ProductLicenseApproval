@@ -17,7 +17,7 @@ body {
   justify-content: center; /* Center vertically */
   align-items: center; /* Center horizontally */
   text-align: center;
-  width: 1200px;
+  width: 100%;
   height: 750px;
   padding: 20px;
   border-radius: 0px;
@@ -59,7 +59,7 @@ form {
   gap: 20px;
   color: DCB32C;
   flex-direction: column;
-  align-items: center; /* Center all form elements */
+  align-items: flex-start; /* Center all form elements */
   justify-content: center;
   
 }
@@ -73,7 +73,7 @@ input {
   font-size: 16px;
   border-radius: 5px;
   width: 100%;
-  max-width: 260px; /* Limit input width */
+  max-width: 272px; /* Limit input width */
   height: 35px;
 }
 
@@ -99,15 +99,6 @@ input:focus {
   width: 100%;
 }
 
-.names-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Reduce label width to 80px */
-  /*grid-template-columns: repeat(auto-fit, minmax(120px, 1fr, 1fr)); */
-  gap: 10px; /* Space between inputs */
-  
-  color: gray;
-  width: 100%;
-}
 
 label[htmlFor="prn"] {
   display: inline-block; /* Make label an inline-block so it can have width */
@@ -138,59 +129,69 @@ label[htmlFor="prn"] {
   
 }
 
-.phone-grid {
-  display: grid;
-  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */  
-  gap: 10px; /* Space between inputs */  
-  color: gray;
-  width: 260px;
-  
-}
-
-
-.email-grid {
-  display: grid;
-  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
-  
-  gap: 10px; /* Space between inputs */
-  
-  color: gray;
-  width: 260px;
-  
-}
-
+.phone-grid,
 .dob-grid {
   display: grid;
-  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */  
+  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
+  justify-content: flex-start; /* Centers content horizontally */
+  align-items: flex-start; /* Centers content vertically */    
   gap: 10px; /* Space between inputs */  
   color: gray;
-  width: 260px;
-  
+  width: 100%;
+  max-width: 400px;  
+}
+
+/* Override max-width for specific input fields */
+.phone-grid input, 
+.dob-grid input {
+  max-width: 100%;  /* Increase max-width */
+  width: 100%;
+}
+ 
+.phone-grid label,
+.dob-grid label {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  width: 100%; /* Match other labels */
 }
 
 .address-grid {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr; /* Reduce label width to 80px */
+  grid-template-columns: 120px 1fr; /* Reduce label width to 80px */
   
   gap: 10px; /* Space between inputs */
   width: 100%;
-  color: gray;
-  
+  max-width: 520px;
+  color: gray;  
 }
-
 
 .fulladdress-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Reduce label width to 80px */
-  
-  gap: 10px; /* Space between inputs */
+  grid-template-columns: 120px 1fr 1fr; /* Two equal columns */
+  gap: 10px; /* Space between columns */
   width: 100%;
-  color: gray;
-  grid-column: 2 / 3; /* Make fulladdress-grid start in the second column */
+  max-width: 1000px;
+  }
+
+
+.fulladdress-grid .city {
+  grid-column: 2 / 3; /* Places City in the first column of the grid */
 }
 
+.fulladdress-grid .state {
+  grid-column: 3 / 4; /* Places State in the second column of the grid */
 
+}
 
+.fulladdress-grid .country {
+  grid-column: 2 / 3; /* Places Country in the first column of the grid */
+}
+
+.fulladdress-grid .postal {
+  grid-column: 3 / 4; /* Places Postal in the second column of the grid */
+
+}
 /* Style the checkbox */
 input[type="checkbox"] {
   appearance: none; /* Removes default styling */
@@ -236,14 +237,16 @@ button {
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
-  margin: auto;
-  
+  margin-right: 10px;
+  width: 100%;
+  max-width: 290px;
+  height: 50px;
 }
 .button-container {
   display: flex;
   justify-content: flex-end; /* Moves button to the right */
-  width: 600px; /* Match form width */
-  height: 100%;
+  width: 100%; /* Match form width */
+  
   padding-top: 10px; /* Adds some spacing from inputs */
   color: #00007F;
 }
@@ -253,39 +256,17 @@ button:hover {
 }
 
 .name-grid,
-.names-grid,
 .gender-grid,
 .genders-grid,
-.address-grid,
-.fulladdress-grid
+.address-grid
 {
   display: grid;
   justify-content: left; /* Centers content horizontally */
   align-items: left; /* Centers content vertically */
-  width: 600px;
+  width: 750px;
   max-width: 100%;
 }
 
-.phone-grid,
-.email-grid,
-.dob-grid
- {
-  display: grid;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  width: 260px;
-  max-width: 100%;
-}
-
-/* Override max-width for specific input fields */
-.phone-grid input, 
-.email-grid input, 
-.dob-grid input {
-  max-width: 260px;  /* Increase max-width */
-  width: 100%;
-}
-
-  
 
 label {
   text-align: left;
@@ -295,7 +276,6 @@ label {
   width: 100%;
   color: #000;
 }
-
 
 select {
   color: gray; /* Text color */
@@ -311,9 +291,9 @@ select {
 }
 
 @media (min-width: 768px) {
-  .phone-grid,
-  .email-grid,
+  .phone-grid, 
   .dob-grid {
+    
     width: 100%; /* Increase width on larger screens */
     justify-content: center; /* Centers content horizontally */
     align-items: center; /* Centers content vertically */
@@ -323,7 +303,6 @@ select {
 
 @media (min-width: 1024px) {
   .phone-grid,
-  .email-grid,
   .dob-grid {
     width: 100%; /* Further increase width on very large screens */
     justify-content: center; /* Centers content horizontally */
@@ -332,75 +311,69 @@ select {
   }
 }
 
-@media (max-width: 1024px) {
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
   .container {
     width: 100%; /* Full width on smaller screens */
     padding: 15px;
   }
 
-  h2 {
-    font-size: 24px; /* Smaller font size for titles */
+  .name-grid, .gender-grid, .genders-grid, .address-grid,  
+  .phone-grid, .dob-grid {
+    max-width: 260px; /* Limit width on small screens */
+    width: 100%;
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
   }
+  .fulladdress-grid {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+}
 
-  .name-grid, .names-grid, .gender-grid, .genders-grid, .address-grid, .fulladdress-grid, 
-  .phone-grid, .email-grid, .dob-grid {
-    width: 100%; /* Make sure all grids take full width */
-    grid-template-columns: 1fr 1fr; /* Stack columns on smaller screens */
-  }
-
+.fulladdress-grid .city,
+.fulladdress-grid .state,
+.fulladdress-grid .country,
+.fulladdress-grid .postal {
+    width: 100%; /* Ensure each input takes full width */
+}
   input, select {
-    max-width: 100%; /* Ensure inputs and selects take full width */
+    max-width: 100%;
   }
 
   .button-container {
     justify-content: center; /* Center button on smaller screens */
-    width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  h2 {
-    font-size: 20px; /* Further reduce font size for mobile */
-  }
-
-  .address-grid {
-    
-    display: grid;
-    grid-template-columns: 1fr; /* Ensure single column on small screens */
-    gap: 10px; /* Keep spacing consistent */
-    
-  }
-
-  .fulladdress-grid {
-    grid-column: auto; /* Remove forced column placement */
-  }
-
-  .phone-grid,
-  .email-grid,
-  .dob-grid {
-    
-    grid-template-columns: 1fr; /* Stack all form fields */
-  
-    justify-content: center;
-    align-items: center;
-  }
-
-    .button-container {
-    justify-content: left; /* Center button on smaller screens */
-    width: 100%;
   }
 
   button {
-    width: 100%; /* Full width on smaller screens */
-    height: 45px; /* Slightly larger for better tap experience */
+    width: 100%;
+    height: 50px;
     max-width: 100%;
+  }
+
+  .genders-grid {
+    grid-template-columns: 1fr 1fr; /* Stack genders side by side on mobile */
   }
 }
 
 @media (max-width: 768px) {
-.name-grid, .names-grid, .gender-grid, .genders-grid{
+.name-grid, .gender-grid{
  
   grid-template-columns: 1fr; /* Stack all form fields */
+  max-width: 260px; /* Limit input width */
+  justify-content: start; /* Center button on smaller screens */
+  align-items: start; /* Centers content vertically */
+  text-align: left;
+}
+
+.genders-grid
+{ 
+  grid-template-columns: 1fr 1fr; /* Stack all form fields */
   max-width: 260px; /* Limit input width */
   justify-content: start; /* Center button on smaller screens */
   align-items: start; /* Centers content vertically */
@@ -418,3 +391,4 @@ label {
 }
 
 }
+

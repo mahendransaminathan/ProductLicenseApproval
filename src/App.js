@@ -10,13 +10,9 @@ function FormPage() {
   const {formData, setFormData} = useFormData();
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
-  const [addressline, setAddressLine] = useState('');
-  const [addressline2, setAddressLine2] = useState('');
-  const [city, setCity] = useState('');
-  const [eircode, setEirCode] = useState('');
-  const [country, setCountry] = useState('');
-  const [emailID, setEmailID] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [addressline, setAddressLine] = useState('');  
+  const [city, setCity] = useState('');  
+  const [country, setCountry] = useState('');  
   const [gender, setGender] = useState("");
   const [phone, setPhone] = useState("");
   const [state, setState] = useState("");
@@ -34,13 +30,12 @@ function FormPage() {
         firstname,
         lastname,
         addressline,
-        addressline2,
+        phone,
         city,
+        state,
         dob,
         country,
-        eircode,
-        phoneNumber,
-        emailID      
+        zip          
       };
 
       setFormData(updatedFormData);
@@ -82,7 +77,7 @@ function FormPage() {
           
           <div className="name-grid">
             <label htmlFor="PersonsName">Person's Name</label>
-            <div className="names-grid">
+            
               <input
                 type="text"
                 id="first"
@@ -94,7 +89,7 @@ function FormPage() {
               onChange={(e) => setLastName(e.target.value)}
               placeholder='Last'/>
             </div>
-          </div>
+          
 
           <div className="gender-grid">
             <label htmlFor="Gender">Gender</label>
@@ -119,41 +114,34 @@ function FormPage() {
         
             <label htmlFor="street">Address</label>
             <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full" required />
-        
-            <div className="fulladdress-grid">  
-                  
-            <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="border p-2 w-full" required />        
-            <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="border p-2 w-full" required />        
-            
-            
-                <select
-                  id="country"
-                  name="selectedCountry"
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                >
-                  <option value="Select a Country">Select a Country</option>
-                  <option value="UnitedStates">United States</option>
-                  <option value="UnitedKingdom">United Kingdom</option>
-                  <option value="Australia">Australia</option>
-                  <option value="Germany">Germany</option>
-                  <option value="France">France</option>
-                  <option value="Canada">Canada</option>
-                  <option value="Japan">Japan</option>
-                </select>
-
-            <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="border p-2 w-full" required />        
-            </div>
+                   
           </div>
+          
+          <div className="fulladdress-grid">  
+                  
+            <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" required />        
+            <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="state" required />              
+            <label htmlFor="country"></label>
+            <select
+              id="country"
+              name="selectedCountry"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
+            >
+              <option value="Select a Country">Select a Country</option>
+              <option value="UnitedStates">United States</option>
+              <option value="UnitedKingdom">United Kingdom</option>
+              <option value="Australia">Australia</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Canada">Canada</option>
+              <option value="Japan">Japan</option>
+            </select>
 
-              
-              <div className="email-grid">
-                <label htmlFor="emailID">EmailID*</label>
-                <input type="text" id="emailID" value={emailID} 
-                onChange={(e) => setEmailID(e.target.value)} 
-                placeholder='Enter Your EmailID'/>              
-              </div>            
-              
+            <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="postal" required />        
+            </div>
+          
+
               <div class="button-container">
                 <button type="submit">Submit</button>          
               </div>
