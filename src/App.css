@@ -287,7 +287,7 @@ select {
   appearance: none; /* Removes default OS styling */
   cursor: pointer;
   width: 100%;
-  max-width: 280px;
+  max-width: 293px;
 }
 
 @media (min-width: 768px) {
@@ -342,6 +342,11 @@ select {
 .fulladdress-grid .postal {
     width: 100%; /* Ensure each input takes full width */
 }
+  /* Adjust select element for small screens */
+  select {
+    max-width: 100%; /* Make sure the select element takes up full width */
+    width: 100%; /* Ensure full width for mobile */
+  }
   input, select {
     max-width: 100%;
   }
