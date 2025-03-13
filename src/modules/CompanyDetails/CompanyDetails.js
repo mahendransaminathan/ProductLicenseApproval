@@ -1,22 +1,16 @@
 import React, { useState } from 'react'; 
-import { useNavigate } from "react-router-dom";
 import { useFormData } from '../../FormDataContext'; 
 
-function PersonDetails() {
-
-    const navigate = useNavigate();
+function CompanyDetails() {
 
     const {formData, setFormData} = useFormData();
-    const [firstname, setFirstName] = useState('');
-    const [lastname, setLastName] = useState('');
+    const [companyname, setCompanyName] = useState('');
+    const [RegNumber, setRegistrationNumber] = useState('');
     const [addressline, setAddressLine] = useState('');  
     const [city, setCity] = useState('');  
     const [country, setCountry] = useState('');  
-    const [gender, setGender] = useState("");
-    const [phone, setPhone] = useState("");
     const [state, setState] = useState("");
     const [zip, setZip] = useState("");
-    const [dob, setDob] = useState("");
     
     
   //  const navigate = useNavigate();
@@ -26,19 +20,17 @@ function PersonDetails() {
         //firstname = "John";
         const updatedFormData = { 
           ...formData,
-          firstname,
-          lastname,
-          addressline,
-          phone,
+          companyname,
+            RegNumber,
+          addressline,          
           city,
-          state,
-          dob,
+          state,          
           country,
           zip          
         };
   
         setFormData(updatedFormData);
-        navigate('/Company');
+  //      navigate('/Company');
   
       fetch("https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person", {
         method: "POST",
@@ -71,56 +63,43 @@ function PersonDetails() {
           <form className='space-y-4' onSubmit={handleSubmit}>
           
             <label htmlFor="Heading" className="heading-label">
-              License Approval Form
+              Company Details
             </label>
             
             <div className="name-grid">
-              <label htmlFor="PersonsName">Person's Name</label>
+              <label htmlFor="CompanyName">Company Name</label>
               
                 <input
                   type="text"
-                  id="first"
-                  value={firstname}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder='First'
+                  id="companyname"
+                  value={companyname}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  placeholder='Company Name'
                 />                                          
-                <input type="text" id="last" value={lastname} 
-                onChange={(e) => setLastName(e.target.value)}
-                placeholder='Last'/>
               </div>
-            
   
-            <div className="gender-grid">
-              <label htmlFor="Gender">Gender</label>
-              <div className="genders-grid">
-              <label><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)}  /> Male</label>
-              <label><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} /> Female</label>
+              <div className="reg-grid">
+              <label htmlFor="RegNumber">Registration Number</label>
+              
+                <input
+                  type="text"
+                  id="RegNumber"
+                  value={RegNumber}
+                  onChange={(e) => setRegistrationNumber(e.target.value)}
+                  placeholder='Registration Number'
+                />         
               </div>
-            </div>
-              <div className="phone-grid">
-              <label htmlFor="phone">Phone</label>
-              <input type="tel" placeholder="Phone (### ### ####)" value={phone} onChange={(e) => setPhone(e.target.value)} className="border p-2 w-full" />
-            </div>
-  
-            
-          <div className="dob-grid">
-          <label htmlFor="dob">Date of Birth</label>
-          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="border p-2 w-full" />
-          </div>
-  
   
             <div className="address-grid">
           
               <label htmlFor="street">Address</label>
-              <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full"  />
+              <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full" required />
                      
-            </div>
-            
-            <div className="fulladdress-grid">  
-                    
-              <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" />        
-              <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="state" />              
-              <label htmlFor="country"></label>
+              <label htmlFor="City">City</label>                    
+              <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" required />        
+              <label htmlFor="State">State</label>
+              <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="state" required />              
+              <label htmlFor="country">Country</label>
               <select
                 id="country"
                 name="selectedCountry"
@@ -136,15 +115,16 @@ function PersonDetails() {
                 <option value="Canada">Canada</option>
                 <option value="Japan">Japan</option>
               </select>
-  
-              <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="postal" />        
+
+              <label htmlFor="Postal">Postal Code</label>
+              <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="postal" required />        
               </div>
-            
-  
-                <div class="button-container">
-                  <button type="submit">Submit</button>          
-                </div>
-                     
+        
+
+            <div class="button-container">
+                <button type="submit">Submit</button>          
+            </div>
+                    
   
             </form>                
         </header>
@@ -152,4 +132,4 @@ function PersonDetails() {
     );
   }
 
-  export default PersonDetails;
+  export default CompanyDetails;
