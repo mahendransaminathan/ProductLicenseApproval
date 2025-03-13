@@ -341,17 +341,24 @@ select {
 .fulladdress-grid .country,
 .fulladdress-grid .postal {
     width: 100%; /* Ensure each input takes full width */
+    max-width: 100%; /* Limit width */
 }
   /* Adjust select element for small screens */
   select {
+    appearance: none; /* Remove default styling */
     max-width: 100%; /* Make sure the select element takes up full width */
     width: 100%; /* Ensure full width for mobile */
+    
+    height: auto; /* Adjust height */
+    min-height: 40px; /* Set a minimum height */
+
   }
-  input, select {
+  input{
     max-width: 100%;
   }
 
   .button-container {
+    width: 100%; /* Full width on smaller screens */
     justify-content: center; /* Center button on smaller screens */
   }
 
