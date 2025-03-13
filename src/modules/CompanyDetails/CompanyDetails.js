@@ -32,7 +32,7 @@ function CompanyDetails() {
         setFormData(updatedFormData);
   //      navigate('/Company');
   
-      fetch("https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person", {
+      fetch("https://companyservices.azurewebsites.net/api/company", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
