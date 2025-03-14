@@ -1,6 +1,8 @@
 import React, { useState } from 'react'; 
 import { useNavigate } from "react-router-dom";
 import { useFormData } from '../../FormDataContext'; 
+import './PersonDetails.css'; // Adjust the path if the CSS file is in a different folder
+
 
 function PersonDetails() {
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react'; 
 import { useFormData } from '../../FormDataContext'; 
+import './CompanyDetails.css'; // Adjust the path if the CSS file is in a different folder
+
 
 function CompanyDetails() {
 
@@ -60,13 +62,13 @@ function CompanyDetails() {
       <div className="container">
         <header className="App-header">
           
-          <form className='space-y-4' onSubmit={handleSubmit}>
+          <form className='company' onSubmit={handleSubmit}>
           
             <label htmlFor="Heading" className="heading-label">
               Company Details
             </label>
             
-            <div className="name-grid">
+            <div className="companyname-grid">
               <label htmlFor="CompanyName">Company Name</label>
               
                 <input
@@ -90,19 +92,19 @@ function CompanyDetails() {
                 />         
               </div>
   
-            <div className="address-grid">
+            <div className="companyaddress-grid">
           
               <label htmlFor="street">Address</label>
               <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full" required />
                      
-              <label htmlFor="City">City</label>                    
-              <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" required />        
-              <label htmlFor="State">State</label>
-              <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="state" required />              
+              <label htmlFor="companyCity">City</label>                    
+              <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="companycity" required />        
+              <label htmlFor="companyState">State</label>
+              <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="companystate" required />              
               <label htmlFor="country">Country</label>
               <select
                 id="country"
-                name="selectedCountry"
+                name="companyselectedCountry"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
               >
@@ -117,16 +119,14 @@ function CompanyDetails() {
               </select>
 
               <label htmlFor="Postal">Postal Code</label>
-              <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="postal" required />        
+              <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="companypostal" required />        
               </div>
         
-
             <div class="button-container">
                 <button type="submit">Submit</button>          
             </div>
-                    
-  
-            </form>                
+          
+            </form>
         </header>
       </div>   
     );
