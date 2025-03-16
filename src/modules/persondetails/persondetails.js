@@ -66,90 +66,121 @@ function PersonDetails() {
       };
   
     return (
-      
-      <div className="container">
-        <header className="App-header">
-          
-          <form className='space-y-4' onSubmit={handleSubmit}>
+      <div className="App">
+        <div className="personal-details-container">
+         
+          <form className='person-details' onSubmit={handleSubmit}>
           
             <label htmlFor="Heading" className="heading-label">
               License Approval Form
             </label>
             
-            <div className="name-grid">
-              <label htmlFor="PersonsName">Person's Name</label>
-              
-                <input
-                  type="text"
-                  id="first"
-                  value={firstname}
+            <div className="personal-details-child">
+              <div className="name-label">
+                <label htmlFor="PersonsName">Person's Name</label>
+              </div>
+
+              <div classname = 'firstnamediv'>
+                <input type="text" id="first" value={firstname}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder='First'
-                />                                          
+                />
+              </div>
+              <div classname = 'lastnamediv'>
                 <input type="text" id="last" value={lastname} 
                 onChange={(e) => setLastName(e.target.value)}
                 placeholder='Last'/>
               </div>
-            
-  
-            <div className="gender-grid">
+              </div>
+              
+            <div className="personal-details-child">
+              <div classname = 'gender-label'>
               <label htmlFor="Gender">Gender</label>
-              <div className="genders-grid">
+              </div>
+
+              <div className="gender-grid">
               <label><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)}  /> Male</label>
               <label><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} /> Female</label>
               </div>
             </div>
-              <div className="phone-grid">
+
+            <div className="personal-details-child">
+              <div className='phone-label'>
               <label htmlFor="phone">Phone</label>
-              <input type="tel" placeholder="Phone (### ### ####)" value={phone} onChange={(e) => setPhone(e.target.value)} className="border p-2 w-full" />
+              </div>
+              <div className='phone-text'>
+              <input type="tel" placeholder="Phone (### ### ####)" value={phone} onChange={(e) => setPhone(e.target.value)} className="phone-textbox" />
+              </div>
             </div>
   
             
-          <div className="dob-grid">
+          <div className="personal-details-child">
+          <div className='dob-label'>
           <label htmlFor="dob">Date of Birth</label>
-          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="border p-2 w-full" />
+          </div>
+          <div className='dob-text'>
+          <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} className="dob-textbox" />
+          </div>
           </div>
   
-  
-            <div className="address-grid">
-          
+              <div className="personal-details-child">
+
+              <div className='address-label'>
               <label htmlFor="street">Address</label>
-              <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full"  />
-                     
+              </div>
+
+              <div className='address-text'>
+              <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="address-textbox"  />
+              </div>       
             </div>
             
-            <div className="fulladdress-grid">  
-                    
+            <div className="personal-details-child">  
+              <div> </div>
+
+              <div className='city-text'>
               <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" />        
+              </div>
+              <div className='state-text'>
               <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="state" />              
-              <label htmlFor="country"></label>
-              <select
-                id="country"
-                name="selectedCountry"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-              >
-                <option value="Select a Country">Select a Country</option>
-                <option value="UnitedStates">United States</option>
-                <option value="UnitedKingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="Canada">Canada</option>
-                <option value="Japan">Japan</option>
-              </select>
-  
+              </div>
+              </div>
+
+              <div className='personal-details-child'>
+                <div></div>
+                <div className='select-dropdown'>
+                  <select
+                    id="country"
+                    name="selectedCountry"
+                    value={country}
+                    onChange={(e) => setCountry(e.target.value)}
+                  >
+                    <option value="Select a Country">Select a Country</option>
+                    <option value="UnitedStates">United States</option>
+                    <option value="UnitedKingdom">United Kingdom</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Japan">Japan</option>
+                  </select>
+                  </div>
+              
+              
+              <div className='postal-text'>
               <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="postal" />        
               </div>
-            
-  
+              
+              </div>
+
+              <div className='personal-details-child'>
+                <div></div>
                 <div class="button-container">
                   <button type="submit">Submit</button>          
                 </div>
-                     
+                </div>
   
-            </form>                
-        </header>
+            </form>       
+            </div>     
       </div>   
     );
   }
