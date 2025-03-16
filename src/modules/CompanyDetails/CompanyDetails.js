@@ -156,8 +156,13 @@ function CompanyDetails() {
               <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="companypostal" required />        
               </div>
               </div>
-            <div class="button-ccontainer">
+
+              <div className='company-details-child'>
+            
+              <div className='button-empty-space'></div>
+              <div class="button-ccontainer">
                 <button type="submit">Submit</button>
+                </div>
             </div>
               
             </form>

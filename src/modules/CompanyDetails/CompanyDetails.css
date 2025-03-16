@@ -1,7 +1,7 @@
 .company-details-container
 {
     display: flex;
-    background-color: DCB32C;
+    background-color: #DCB32C;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -176,7 +176,15 @@ select
     justify-content: flex-start;
 }
 
+.button-empty-space
+{
+    width: 250px;
+}
 
+.button
+{
+    width: 100px;
+}
 @media (max-width: 768px)
 {
     .company-details-container
