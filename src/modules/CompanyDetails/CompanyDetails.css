@@ -1,13 +1,177 @@
-body
+.company-details-container
 {
-    background-color: #DCB32C;
-    font-family: 'Roboto', sans-serif;
+    display: flex;
+    background-color: DCB32C;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-.container
+.company-details
 {
-    background-color: #DCB32C;
-    padding: 20px;
-
+    display: flex;
+    
+    width: 500px;    
+    flex-direction: column;
 }
 
+.company-details-child
+{
+    display: flex;
+    height: 60px;
+    
+    align-items: center;
+    justify-content: center;   
+    
+    
+}
+
+input[type=text]
+{
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+select
+{
+    width: 250px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.company-Name-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+
+.company-Name-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.reg-Num-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.reg-Num-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.address-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.address-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.city-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.city-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.state-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.state-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.country-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.country-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.postal-Label
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+}
+
+.postal-Text
+{
+    display: flex;
+    width: 250px;
+    height: 125px;
+    align-items: center;
+    justify-content: flex-start;
+}

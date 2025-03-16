@@ -58,31 +58,32 @@ function CompanyDetails() {
       };
   
     return (
-      
-      <div className="container">
-        <header className="App-header">
-          
-          <form className='company' onSubmit={handleSubmit}>
-          
-            <label htmlFor="Heading" className="heading-label">
-              Company Details
-            </label>
-            
-            <div className="companyname-grid">
-              <label htmlFor="CompanyName">Company Name</label>
-              
+      <div className='App'>
+        <div className="company-details-container">
+          <form className='company-details' onSubmit={handleSubmit}>
+              <h1>Company Details</h1>
+                                    
+            <div className="company-details-child">
+              <div className='company-Name-Label'>
+                <label htmlFor="CompanyName">Company Name</label>
+                </div>
+                <div className='company-Name-Text'>
                 <input
                   type="text"
                   id="companyname"
                   value={companyname}
                   onChange={(e) => setCompanyName(e.target.value)}
                   placeholder='Company Name'
-                />                                          
-              </div>
-  
-              <div className="reg-grid">
-              <label htmlFor="RegNumber">Registration Number</label>
-              
+                />         
+                </div>             
+                </div> 
+
+
+                <div className='company-details-child'>
+                  <div className='reg-Num-Label'>Registration Number
+                    </div>
+                  <div className='reg-Num-Text'>
+
                 <input
                   type="text"
                   id="RegNumber"
@@ -91,17 +92,43 @@ function CompanyDetails() {
                   placeholder='Registration Number'
                 />         
               </div>
-  
-            <div className="companyaddress-grid">
-          
-              <label htmlFor="street">Address</label>
-              <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="border p-2 w-full" required />
-                     
-              <label htmlFor="companyCity">City</label>                    
+              </div>
+
+              <div className='company-details-child'>
+                <div className='address-Label'>
+            
+                <label htmlFor="street">Address</label>
+                </div>
+                <div className='address-Text'>
+                <input type="text" placeholder="Street Address" value={addressline} onChange={(e) => setAddressLine(e.target.value)} className="street" required />
+                </div>
+              </div>
+              <div className='company-details-child'>
+                <div className='city-Label'>
+                <label htmlFor="companyCity">City</label>
+                </div>                
+                <div className='city-Text'>
               <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="companycity" required />        
+              </div>
+              </div>
+
+
+              <div className='company-details-child'>
+              <div className='state-Label'>
               <label htmlFor="companyState">State</label>
+              </div>
+              <div className='state-Text'>
               <input type="text" placeholder="State" value={state} onChange={(e) => setState(e.target.value)} className="companystate" required />              
-              <label htmlFor="country">Country</label>
+              </div>  
+              </div>
+
+              <div className='company-details-child'>
+              <div className='country-Label'>
+            
+                <label htmlFor="country">Country</label>
+                </div>
+
+                <div className='country-Text'>
               <select
                 id="country"
                 name="companyselectedCountry"
@@ -117,18 +144,26 @@ function CompanyDetails() {
                 <option value="Canada">Canada</option>
                 <option value="Japan">Japan</option>
               </select>
+              </div>
+              </div>
 
+              <div className='company-details-child'>
+              <div className='postal-Label'>
+            
               <label htmlFor="Postal">Postal Code</label>
+              </div>
+              <div className='postal-Text'>
               <input type="text" placeholder="Postal / Zip Code" value={zip} onChange={(e) => setZip(e.target.value)} className="companypostal" required />        
               </div>
-        
-            <div class="button-container">
-                <button type="submit">Submit</button>          
+              </div>
+            <div class="button-ccontainer">
+                <button type="submit">Submit</button>
             </div>
-          
+              
             </form>
-        </header>
-      </div>   
+            </div>
+
+      </div>
     );
   }
 
