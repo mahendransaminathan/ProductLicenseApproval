@@ -135,7 +135,7 @@ function PersonDetails() {
             </div>
             
             <div className="personal-details-child">  
-              <div> </div>
+              <div className='city-empty-child'> </div>
 
               <div className='city-text'>
               <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)} className="city" />        
@@ -146,7 +146,7 @@ function PersonDetails() {
               </div>
 
               <div className='personal-details-child'>
-                <div></div>
+                <div className='select-empty-child'></div>
                 <div className='select-dropdown'>
                   <select
                     id="country"
@@ -173,7 +173,8 @@ function PersonDetails() {
               </div>
 
               <div className='personal-details-child'>
-                <div></div>
+                <div className='button-empty-child1'></div>
+                <div className='button-empty-child2'></div>
                 <div class="button-container">
                   <button type="submit">Submit</button>          
                 </div>

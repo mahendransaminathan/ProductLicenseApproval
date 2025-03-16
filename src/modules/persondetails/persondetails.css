@@ -43,7 +43,7 @@
 
 .phone-textbox
 {
-  width: 260px;
+  width: 250px;
   height: 45px;
   border-radius: 10px;
 }
@@ -55,7 +55,7 @@
 
 .dob-textbox
 {
-  width: 260px;
+  width: 250px;
   height: 45px;
   border-radius: 10px;
 }
@@ -66,4 +66,41 @@
 }
 
 
+.address-textbox
+{
+  width: 275px;
+  height: 45px;
+}
 
+.city-empty-child
+{
+  width: 125px;
+}
+
+.select-empty-child
+{
+  width: 125px;
+}
+
+select
+{
+  width: 275px;
+  height: 50px;
+}
+
+.button-empty-child1
+{
+  width: 125px;
+}
+
+.button-empty-child2
+{
+  width: 260px;
+}
+
+button
+{
+  width: 260px;
+  height: 45px;
+  border-radius: 10px;
+}
