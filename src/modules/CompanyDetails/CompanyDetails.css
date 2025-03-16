@@ -175,3 +175,37 @@ select
     align-items: center;
     justify-content: flex-start;
 }
+
+
+@media (max-width: 768px)
+{
+    .company-details-container
+    {
+        display: flex;
+        background-color: DCB32C;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .company-details
+    {
+        display: flex;
+        
+        width: 250px;    
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .company-details-child
+    {
+        display: flex;
+        height: 60px;
+        
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;       
+        
+    }
+    
+}
