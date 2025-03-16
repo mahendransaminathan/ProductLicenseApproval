@@ -175,8 +175,8 @@ function PersonDetails() {
               <div className='personal-details-child'>
                 <div className='button-empty-child1'></div>
                 <div className='button-empty-child2'></div>
-                <div class="button-container">
-                  <button type="submit">Submit</button>          
+                <div className="button-container">
+                  <button className='buttontext'>Submit</button>          
                 </div>
                 </div>
   

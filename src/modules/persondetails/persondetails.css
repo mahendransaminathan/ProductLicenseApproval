@@ -100,7 +100,9 @@ select
 
 button
 {
-  width: 260px;
+  width: 250px;
   height: 45px;
   border-radius: 10px;
+  background-color: #00007F;
+  color: white;
 }
