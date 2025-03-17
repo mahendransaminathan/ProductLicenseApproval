@@ -178,7 +178,7 @@ function PersonDetails() {
                 <div className='button-empty-child1'></div>
                 <div className='button-empty-child2'></div>
                 <div className="button-container">
-                  <button className='buttontext'>Submit</button>          
+                  <button className='buttontext'>Next</button>          
                 </div>
                 </div>
   
