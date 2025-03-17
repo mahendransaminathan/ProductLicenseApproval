@@ -71,10 +71,11 @@ function PersonDetails() {
          
           <form className='person-details' onSubmit={handleSubmit}>
           
+            <div className='headinglabel'>
             <label htmlFor="Heading" className="heading-label">
               License Approval Form
             </label>
-            
+            </div>
             <div className="personal-details-child">
               <div className="name-label">
                 <label htmlFor="PersonsName">Person's Name</label>

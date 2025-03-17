@@ -23,6 +23,18 @@
   align-items: center;  
 }
 
+.headinglabel
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-label
+{
+  
+}
+
 .name-label
 {
   width: 125px;
