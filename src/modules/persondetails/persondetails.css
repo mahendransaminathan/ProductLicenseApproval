@@ -29,11 +29,15 @@
 .gender-label
 {
   width: 125px;
+  height: 75px;
 }
-
+.genderlabel
+{
+  width: 125px;
+}
 .gender-grid
 {
-  
+  width: 260px;
 }
 
 .phone-label

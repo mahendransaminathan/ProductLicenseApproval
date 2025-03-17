@@ -161,7 +161,7 @@ function CompanyDetails() {
             
               <div className='button-empty-space'></div>
               <div class="button-ccontainer">
-                <button type="submit">Submit</button>
+                <button className='button-text'>Submit</button>
                 </div>
             </div>
               

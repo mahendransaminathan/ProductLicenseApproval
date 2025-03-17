@@ -94,13 +94,15 @@ function PersonDetails() {
               </div>
               
             <div className="personal-details-child">
-              <div classname = 'gender-label'>
-              <label htmlFor="Gender">Gender</label>
+              <div classname='gender-label'>
+              <label htmlFor="genderlabel">Gender</label>
               </div>
 
               <div className="gender-grid">
-              <label><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)}  /> Male</label>
-              <label><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} /> Female</label>
+
+              <label className='malegender'><input type="checkbox" name="gender" value="Male" checked={gender === "Male"} onChange={(e) => setGender(e.target.value)}  /> Male</label>
+              
+              <label className='femalegender'><input type="checkbox" name="gender" value="Female" checked={gender === "Female"} onChange={(e) => setGender(e.target.value)} /> Female</label>
               </div>
             </div>
 

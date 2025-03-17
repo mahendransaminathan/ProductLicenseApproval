@@ -180,10 +180,13 @@ select
 {
     width: 250px;
 }
-
-.button
+button-text
 {
-    width: 100px;
+  width: 250px;
+  height: 45px;
+  border-radius: 10px;
+  background-color: #00007F;
+  color: white;
 }
 @media (max-width: 768px)
 {
