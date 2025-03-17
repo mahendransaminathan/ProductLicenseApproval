@@ -137,7 +137,8 @@ button
   .person-details
   {
     display: flex;
-    flex-wrap: wrap;   
+    flex-wrap: wrap; 
+    width: 275px;  
   }
 
   .personal-details-child
