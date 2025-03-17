@@ -112,3 +112,53 @@ button
   background-color: #00007F;
   color: white;
 }
+
+
+@media (max-width: 768px)
+{
+  .personal-details-container
+  {
+    display: flex;
+    background-color: #DCB32C;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .person-details
+  {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+  }
+
+  .personal-details-child
+  {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;  
+    justify-content: center;
+    flex-direction: column;       
+  }
+
+  .city-empty-child
+  {
+    display: none;
+  }
+
+  .select-empty-child
+  {
+    display: none;
+  }
+
+  .button-empty-child1
+  {
+    display: none;
+  }
+
+  .button-empty-child2
+  {
+    display: none;
+  }
+
+}
