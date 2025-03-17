@@ -128,22 +128,21 @@ button
   {
     display: flex;
     background-color: #DCB32C;
-    height: 100vh;
+    
     align-items: center;
     justify-content: center;
+    height: 1000px;
   }
 
   .person-details
   {
     display: flex;
-    flex-wrap: wrap;
-    row-gap: 25px;
+    flex-wrap: wrap;   
   }
 
   .personal-details-child
   {
-    display: flex;
-    gap: 20px;
+    display: flex;    
     align-items: flex-start;  
     justify-content: center;
     flex-direction: column;       

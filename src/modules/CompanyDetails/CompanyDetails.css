@@ -204,8 +204,7 @@ button-text
 
     .company-details
     {
-        display: flex;
-        
+        display: flex;        
         width: 250px;    
         flex-wrap: wrap;
         gap: 20px;
