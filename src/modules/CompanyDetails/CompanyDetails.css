@@ -9,8 +9,7 @@
 
 .company-details
 {
-    display: flex;
-    
+    display: flex;    
     width: 500px;    
     flex-direction: column;
 }
@@ -18,12 +17,16 @@
 .company-details-child
 {
     display: flex;
-    height: 60px;
-    
+    height: 60px;    
     align-items: center;
-    justify-content: center;   
-    
-    
+    justify-content: center;       
+}
+
+.headername
+{   
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input[type=text]

@@ -23,16 +23,12 @@
   align-items: center;  
 }
 
-.headinglabel
+.personalheadername
 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.heading-label
-{
-  
+  height: 20px;
 }
 
 .name-label

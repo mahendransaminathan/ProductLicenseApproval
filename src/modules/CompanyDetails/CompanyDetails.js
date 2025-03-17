@@ -61,8 +61,9 @@ function CompanyDetails() {
       <div className='App'>
         <div className="company-details-container">
           <form className='company-details' onSubmit={handleSubmit}>
+            <div className='headername'>
               <h1>Company Details</h1>
-                                    
+            </div>        
             <div className="company-details-child">
               <div className='company-Name-Label'>
                 <label htmlFor="CompanyName">Company Name</label>
