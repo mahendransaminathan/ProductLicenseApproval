@@ -94,7 +94,7 @@ function PersonDetails() {
               </div>
               
             <div className="personal-details-child">
-              <div classname='gender-label'>
+              <div className='gender-label'>
               <label htmlFor="genderlabel">Gender</label>
               </div>
 
@@ -151,7 +151,7 @@ function PersonDetails() {
                 <div className='select-empty-child'></div>
                 <div className='select-dropdown'>
                   <select
-                    id="country"
+                    className="country"
                     name="selectedCountry"
                     value={country}
                     onChange={(e) => setCountry(e.target.value)}
