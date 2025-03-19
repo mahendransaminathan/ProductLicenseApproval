@@ -20,30 +20,30 @@ function PersonDetails() {
   const [companyName, setCompanyName] = useState([]);
 
 
-  useEffect(() => {
-    // Function to fetch data from backend
-    const fetchData = async () => {
+  // useEffect(() => {
+  //   // Function to fetch data from backend
+  //   const fetchData = async () => {
       
-        const response = await fetch("https://companyservices.azurewebsites.net/api/company", 
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json"
-          }
-        }
-        );
-        const result = await response.json();
-        setCompanyName(result);
+  //       const response = await fetch("https://companyservices.azurewebsites.net/api/company", 
+  //       {
+  //         method: "GET",
+  //         headers: {
+  //           "Content-Type": "application/json"
+  //         }
+  //       }
+  //       );
+  //       const result = await response.json();
+  //       setCompanyName(result);
       
-      };
+  //     };
 
-      const interval = 0;
-    // Fetch data every 60 seconds
-    //const interval = setInterval(fetchData, 60000);
+  //     const interval = 0;
+  //   // Fetch data every 60 seconds
+  //   //const interval = setInterval(fetchData, 60000);
 
-    // Cleanup interval on component unmount
-    return () => clearInterval(interval);
-  }, []);
+  //   // Cleanup interval on component unmount
+  //   return () => clearInterval(interval);
+  // }, []);
 
   //  const navigate = useNavigate();
   // Submit handler
