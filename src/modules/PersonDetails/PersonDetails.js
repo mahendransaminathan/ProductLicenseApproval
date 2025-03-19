@@ -37,6 +37,7 @@ function PersonDetails() {
       
       };
 
+      const interval = 0;
     // Fetch data every 60 seconds
     //const interval = setInterval(fetchData, 60000);
 

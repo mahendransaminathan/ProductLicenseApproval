@@ -4,7 +4,7 @@ import "./CompanyDetails.css"; // Adjust the path if the CSS file is in a differ
 import { v4 as uuidv4 } from "uuid";
 
 function CompanyDetails() {
-  const { formData, setFormData } = useFormData();
+  //const { formData, setFormData } = useFormData();
   const [id, setID] = useState("");
   const [companyname, setCompanyName] = useState("");
   const [RegNumber, setRegistrationNumber] = useState("");
@@ -18,9 +18,9 @@ function CompanyDetails() {
   // Submit handler
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent form from reloading the page
-    const id = uuidv4();
+    setID(uuidv4());
     const updatedFormData = {
-      ...formData,
+      
       id,
       companyname,
       RegNumber,
@@ -30,8 +30,8 @@ function CompanyDetails() {
       country,
       zip,
     };
-
-    setFormData(updatedFormData);
+    alert("Company Details Submitted Successfully" + JSON.stringify(id, null, 2));
+    //setFormData(updatedFormData);
     //      navigate('/Company');
 
     fetch("https://companyservices.azurewebsites.net/api/company", {
