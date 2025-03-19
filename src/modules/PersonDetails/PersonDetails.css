@@ -92,6 +92,7 @@
 {
   width: 260px;
   height: 50px;
+  right: 0;
 }
 .select-empty-child
 {
@@ -103,6 +104,17 @@
   width: 260px;
   height: 45px;
 }
+
+.Companyname-label
+{
+  width: 125px;
+}
+
+.company
+{
+  width: 260px;
+  height: 50px;
+ }
 
 .button-empty-child1
 {
@@ -155,6 +167,7 @@
   {
     display: none;
   }
+
 
   .select-empty-child
   {
