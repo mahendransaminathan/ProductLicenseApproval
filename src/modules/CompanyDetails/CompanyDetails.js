@@ -7,12 +7,12 @@ function CompanyDetails() {
   //const { formData, setFormData } = useFormData();
   const [id, setID] = useState("");
   const [companyname, setCompanyName] = useState("");
-  const [RegNumber, setRegistrationNumber] = useState("");
-  const [addressline, setAddressLine] = useState("");
+  const [registrationNumber, setRegistrationNumber] = useState("");
+  const [address, setAddressLine] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+  const [eircode, setZip] = useState("");
 
   //  const navigate = useNavigate();
   // Submit handler
@@ -23,12 +23,12 @@ function CompanyDetails() {
       
       id,
       companyname,
-      RegNumber,
-      addressline,
+      registrationNumber,
+      address,
       city,
       state,
       country,
-      zip,
+      eircode,
     };
     alert("Company Details Submitted Successfully" + JSON.stringify(id, null, 2));
     //setFormData(updatedFormData);
@@ -43,6 +43,7 @@ function CompanyDetails() {
     })
       .then((response) => {
         if (!response.ok) {
+
           return response.text().then((errorMessage) => {
             throw new Error(`HTTP ${response.status}: ${errorMessage}`);
           });
@@ -83,7 +84,7 @@ function CompanyDetails() {
               <input
                 type="text"
                 id="RegNumber"
-                value={RegNumber}
+                value={registrationNumber}
                 onChange={(e) => setRegistrationNumber(e.target.value)}
                 placeholder="Registration Number"
               />
@@ -98,10 +99,10 @@ function CompanyDetails() {
               <input
                 type="text"
                 placeholder="Street Address"
-                value={addressline}
+                value={address}
                 onChange={(e) => setAddressLine(e.target.value)}
                 className="street"
-                required
+                
               />
             </div>
           </div>
@@ -116,7 +117,7 @@ function CompanyDetails() {
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 className="companycity"
-                required
+                
               />
             </div>
           </div>
@@ -132,7 +133,7 @@ function CompanyDetails() {
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 className="companystate"
-                required
+                
               />
             </div>
           </div>
@@ -169,10 +170,10 @@ function CompanyDetails() {
               <input
                 type="text"
                 placeholder="Postal / Zip Code"
-                value={zip}
+                value={eircode}
                 onChange={(e) => setZip(e.target.value)}
                 className="companypostal"
-                required
+                
               />
             </div>
           </div>
