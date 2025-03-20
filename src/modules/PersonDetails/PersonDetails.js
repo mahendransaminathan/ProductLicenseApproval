@@ -18,6 +18,7 @@ function PersonDetails() {
   const [zip, setZip] = useState("");
   const [dob, setDob] = useState("");
   const [companyName, setCompanyName] = useState([]);
+  const [selectedCompany, setSelectedCompany] = useState(""); // To store selected company's ID
 
 
   // useEffect(() => {
@@ -105,7 +106,7 @@ function PersonDetails() {
               <label htmlFor="PersonsName">Person's Name</label>
             </div>
 
-            <div classname="firstnamediv">
+            <div className="firstnamediv">
               <input
                 type="text"
                 id="first"
@@ -263,8 +264,8 @@ function PersonDetails() {
               <select
                 className="company"
                 name="selectedCompany"
-                value={companyName}
-                onChange={(e) => setCompanyName(e.target.value)}
+                value={selectedCompany}
+                onChange={(e) => setSelectedCompany(e.target.value)}
               >
                 {companyName.map((item, index) => (
                   <option key={index} value={item.id}>{item.name}</option>

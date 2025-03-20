@@ -179,7 +179,7 @@ function CompanyDetails() {
 
           <div className="company-details-child">
             <div className="button-empty-space"></div>
-            <div class="button-ccontainer">
+            <div className="button-ccontainer">
               <button className="button-text">Submit</button>
             </div>
           </div>
