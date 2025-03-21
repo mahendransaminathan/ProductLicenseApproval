@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import config from "../../config";
 
 import "./PersonDetails.css"; // Adjust the path if the CSS file is in a different folder
 
@@ -24,7 +25,7 @@ function PersonDetails() {
     // Function to fetch data from backend
     const fetchData = async () => {
       
-        const response = await fetch("https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person/companynames", 
+        const response = await fetch(config.PLAServiceCompanyNamesApiUrl, 
         {
           method: "GET",
           headers: {
@@ -67,8 +68,7 @@ function PersonDetails() {
     
     navigate("/Company");
 
-    fetch(
-      "https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person",
+    fetch(config.PLAServiceApiUrl,
       {
         method: "POST",
         headers: {
@@ -93,7 +93,7 @@ function PersonDetails() {
   };
 
   return (
-    <div className="App">
+    <div className="PersonApp">
       <div className="personal-details-container">
         <form className="person-details" onSubmit={handleSubmit}>
           <div className="personalheadername">

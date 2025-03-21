@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./CompanyDetails.css"; // Adjust the path if the CSS file is in a different folder
 import { v4 as uuidv4 } from "uuid";
-
+import config from "../../config";
 function CompanyDetails() {
   //const { formData, setFormData } = useFormData();
   const [id, setID] = useState("");
@@ -34,7 +34,7 @@ function CompanyDetails() {
     //setFormData(updatedFormData);
     //      navigate('/Company');
 
-    fetch("https://companyservices.azurewebsites.net/api/company", {
+    fetch(config.CompanyServiceApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -57,7 +57,7 @@ function CompanyDetails() {
   };
 
   return (
-    <div className="App">
+    <div className="CompanyApp">
       <div className="company-details-container">
         <form className="company-details" onSubmit={handleSubmit}>
           <div className="headername">

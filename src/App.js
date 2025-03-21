@@ -11,7 +11,7 @@ import ProductDetails from './modules/ProductDetails/ProductDetails.js';
 function App() {
   return (
     <Router>
-      <div>
+      <div className="ReactApp">
         <div className="links">
           <Link to="/">Home</Link>
           <Link to="/person">Person</Link>
@@ -19,7 +19,7 @@ function App() {
           <Link to="/product">Product</Link>
         </div>
 
-        <div>
+        <div className='content'>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/person" element={<PersonDetails />} />
