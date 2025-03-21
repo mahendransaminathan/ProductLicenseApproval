@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useFormData } from "../../FormDataContext";
+
 import "./PersonDetails.css"; // Adjust the path if the CSS file is in a different folder
 
 function PersonDetails() {
   const navigate = useNavigate();
 
-  const { formData, setFormData } = useFormData();
   const [firstname, setFirstName] = useState("");
   const [lastname, setLastName] = useState("");
   const [addressline, setAddressLine] = useState("");
@@ -21,30 +20,30 @@ function PersonDetails() {
   const [selectedCompany, setSelectedCompany] = useState(""); // To store selected company's ID
 
 
-  // useEffect(() => {
-  //   // Function to fetch data from backend
-  //   const fetchData = async () => {
+  useEffect(() => {
+    // Function to fetch data from backend
+    const fetchData = async () => {
       
-  //       const response = await fetch("https://companyservices.azurewebsites.net/api/company", 
-  //       {
-  //         method: "GET",
-  //         headers: {
-  //           "Content-Type": "application/json"
-  //         }
-  //       }
-  //       );
-  //       const result = await response.json();
-  //       setCompanyName(result);
-      
-  //     };
+        const response = await fetch("https://plaservice-hbhbd3eteqbwbfc3.northeurope-01.azurewebsites.net/api/person/companynames", 
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+        );
+        const result = await response.json();
+        setCompanyName(result);
+        //alert("Company Names Fetched Successfully" + JSON.stringify(result, null, 2));
+      };
 
-  //     const interval = 0;
-  //   // Fetch data every 60 seconds
-  //   //const interval = setInterval(fetchData, 60000);
+    
+    // Fetch data every 60 seconds
+    const interval = setInterval(fetchData, 60000);
 
-  //   // Cleanup interval on component unmount
-  //   return () => clearInterval(interval);
-  // }, []);
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
 
   //  const navigate = useNavigate();
   // Submit handler
@@ -52,7 +51,7 @@ function PersonDetails() {
     e.preventDefault(); // Prevent form from reloading the page
     //firstname = "John";
     const updatedFormData = {
-      ...formData,
+      
       firstname,
       lastname,
       addressline,
@@ -62,10 +61,10 @@ function PersonDetails() {
       dob,
       country,
       zip,
-      companyName,
+      // companyName,
     };
 
-    setFormData(updatedFormData);
+    
     navigate("/Company");
 
     fetch(
@@ -267,8 +266,8 @@ function PersonDetails() {
                 value={selectedCompany}
                 onChange={(e) => setSelectedCompany(e.target.value)}
               >
-                {companyName.map((item, index) => (
-                  <option key={index} value={item.id}>{item.name}</option>
+                {companyName.map((item) => (
+                  <option key={item.id} value={item.id}>{item.label}</option>
                 ))}
               </select>
             </div>
