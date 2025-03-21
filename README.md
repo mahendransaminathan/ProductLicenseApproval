@@ -9,6 +9,9 @@ https://rameshbabupeddapalli.atlassian.net/wiki/spaces/ProductLic/overview
 # Jira board
 https://rameshbabupeddapalli.atlassian.net/jira/software/projects/PLA/boards/2
 
+# UML Design
+https://app.diagrams.net/#G1IHMInnmiSErw8SVbFyYMP29JCLNiWqYk#%7B%22pageId%22%3A%22JcpvrASIKzLr8ADba_BA%22%7D
+
 # Web Service 
 dotnet new webapi -o MyWebApiProject
 
@@ -133,3 +136,7 @@ Follow the below steps to create Azure App Service for backend
 • Click on Add your client  
 • Select Allow Azure tick box   
 • Click on Save button to save the changes     
+
+# Check the Azure App Service Logs - To verify that the Rest API is hosted in the App Service is successfully called
+Development Tools ===> Advanced Tools ===> Go ===> Debug Console ===> PowerShell === LogFiles ===> eventlog.xml
+
