@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./ProductDetails.css";
 
 function ProductDetails() {
-
   const [productName, setProductName] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [productCategory, setProductCategory] = useState("");
@@ -11,13 +10,14 @@ function ProductDetails() {
   const [productCurrency, setProductCurrency] = useState("");
   const [productQuantity, setProductQuantity] = useState("");
   const [productSupplier, setProdductSupplier] = useState("");
-  const [productAvailabilityStatus, setProductAvailabilityStatus] = useState("");
+  const [productAvailabilityStatus, setProductAvailabilityStatus] =
+    useState("");
   const [productDeliveryOptions, setProductDeliveryOptions] = useState("");
   const [productBrandName, setProductBrandName] = useState("");
   const [productModelNumber, setProductModelNumber] = useState("");
   const [productDiscount, setProductDiscount] = useState("");
   const [productCountryofOrigin, setProductCountryofOrigin] = useState("");
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted");
@@ -143,12 +143,14 @@ function ProductDetails() {
                   onChange={(e) => setProdductSupplier(e.target.value)}
                 />
               </div>
-              </div>
-              <div className="product-availabilitystatus">
+            </div>
+            <div className="product-availabilitystatus">
               <div className="product-availabilitystatus-label">
-                <label htmlFor="productAvailabilityStatus">Product Availability Status</label>
-                </div>
-                <div className="product-availabilitystatus-text">
+                <label htmlFor="productAvailabilityStatus">
+                  Product Availability Status
+                </label>
+              </div>
+              <div className="product-availabilitystatus-text">
                 <input
                   type="text"
                   id="productAvailabilityStatus"
@@ -156,13 +158,15 @@ function ProductDetails() {
                   value={productAvailabilityStatus}
                   onChange={(e) => setProductAvailabilityStatus(e.target.value)}
                 />
-                </div>
-                </div>
-                <div className="product-deliveryOptions">
+              </div>
+            </div>
+            <div className="product-deliveryOptions">
               <div className="product-deliveryOptions-label">
-                <label htmlFor="productDeliveryOptions">Product Delivery Options</label>
-                </div>
-                <div className="product-deliveryOptions-text">
+                <label htmlFor="productDeliveryOptions">
+                  Product Delivery Options
+                </label>
+              </div>
+              <div className="product-deliveryOptions-text">
                 <input
                   type="text"
                   id="productDeliveryOptions"
@@ -170,14 +174,14 @@ function ProductDetails() {
                   value={productDeliveryOptions}
                   onChange={(e) => setProductDeliveryOptions(e.target.value)}
                 />
-                </div>
-                </div>
+              </div>
+            </div>
 
-                <div className="product-brandname">
+            <div className="product-brandname">
               <div className="product-brandname-label">
                 <label htmlFor="productBrandName">Product Brand Name</label>
-                </div>
-                <div className="product-brandname-text">
+              </div>
+              <div className="product-brandname-text">
                 <input
                   type="text"
                   id="productBrandName"
@@ -185,13 +189,13 @@ function ProductDetails() {
                   value={productBrandName}
                   onChange={(e) => setProductBrandName(e.target.value)}
                 />
-                </div>
-                </div>
-                <div className="product-modelNumber">
+              </div>
+            </div>
+            <div className="product-modelNumber">
               <div className="product-modelNumber-label">
                 <label htmlFor="productModelNumber">Product Model Number</label>
-                </div>
-                <div className="product-modelNumber-text">
+              </div>
+              <div className="product-modelNumber-text">
                 <input
                   type="text"
                   id="productModelNumber"
@@ -199,13 +203,13 @@ function ProductDetails() {
                   value={productModelNumber}
                   onChange={(e) => setProductModelNumber(e.target.value)}
                 />
-                </div>
-                </div>
-                <div className="product-discount">
+              </div>
+            </div>
+            <div className="product-discount">
               <div className="product-discount-label">
                 <label htmlFor="productDiscount">Product Discount</label>
-                </div>
-                <div className="product-discount-text">
+              </div>
+              <div className="product-discount-text">
                 <input
                   type="text"
                   id="productDiscount"
@@ -213,13 +217,15 @@ function ProductDetails() {
                   value={productDiscount}
                   onChange={(e) => setProductDiscount(e.target.value)}
                 />
-                </div>
-                </div>
-                <div className="product-countryofOrigin">
+              </div>
+            </div>
+            <div className="product-countryofOrigin">
               <div className="product-countryofOrigin-label">
-                <label htmlFor="productCountryofOrigin">Product Country of Origin</label>
-                </div>
-                <div className="product-countryofOrigin-text">
+                <label htmlFor="productCountryofOrigin">
+                  Product Country of Origin
+                </label>
+              </div>
+              <div className="product-countryofOrigin-text">
                 <input
                   type="text"
                   id="productCountryofOrigin"
@@ -227,9 +233,8 @@ function ProductDetails() {
                   value={productCountryofOrigin}
                   onChange={(e) => setProductCountryofOrigin(e.target.value)}
                 />
-                </div>
-                </div>           
-
+              </div>
+            </div>
           </div>
         </form>
       </div>

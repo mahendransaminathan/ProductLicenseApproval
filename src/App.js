@@ -7,6 +7,7 @@ import HomePage from './modules/HomePage/HomePage.js';
 import PersonDetails from './modules/PersonDetails/PersonDetails.js';
 import CompanyDetails from './modules/CompanyDetails/CompanyDetails.js';
 import ProductDetails from './modules/ProductDetails/ProductDetails.js';
+import './App.css';
 
 function App() {
   return (
@@ -19,13 +20,15 @@ function App() {
           <Link to="/product">Product</Link>
         </div>
 
-        <div className='content'>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/person" element={<PersonDetails />} />
-            <Route path="/company" element={<CompanyDetails />} />
-            <Route path="/product" element={<ProductDetails />} />
-          </Routes>
+        <div className="content-container">
+          <div className='content'>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/person" element={<PersonDetails />} />
+              <Route path="/company" element={<CompanyDetails />} />
+              <Route path="/product" element={<ProductDetails />} />
+            </Routes>
+          </div>  
         </div>
       </div>
     </Router>

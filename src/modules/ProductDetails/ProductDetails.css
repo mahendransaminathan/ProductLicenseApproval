@@ -1,0 +1,90 @@
+
+.product-details-container
+{
+    display: flex;
+    background-color: #DCB32C;
+    
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+}
+
+.product-details
+{
+    display: flex;
+    flex-direction: row;
+    row-gap: 25px;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.product-details-left
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.product-details-right
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-name,
+.company-name,
+.product-category,
+.Licence-Type,
+.product-price,
+.product-currency,
+.product-quantity,
+.product-availabilitystatus,
+.product-supplier,
+.product-deliveryOptions,
+.product-brandname,
+.product-modelNumber,
+.product-discount,
+.product-countryofOrigin
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 20px;
+    gap: 20px;
+    text-align: start;
+}
+
+.product-name-label,
+.company-name-label,
+.product-category-label,
+.Licence-Type-Label,
+.product-price-label,
+.product-currency-label,
+.product-quantity-label,
+.product-availabilitystatus-label,
+.product-supplier-label,
+.product-deliveryOptions-label,
+.product-brandname-label,
+.product-modelNumber-label,
+.product-discount-label,
+.product-countryofOrigin-label
+{
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 190px;
+}
