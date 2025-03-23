@@ -1,25 +1,65 @@
 import { useState } from "react";
 import "./ProductDetails.css";
+import config from "../../config";
 
 function ProductDetails() {
   const [productName, setProductName] = useState("");
   const [companyName, setCompanyName] = useState("");
-  const [productCategory, setProductCategory] = useState("");
-  const [licenceType, setLicenceType] = useState("");
-  const [productPrice, setProductPrice] = useState("");
-  const [productCurrency, setProductCurrency] = useState("");
-  const [productQuantity, setProductQuantity] = useState("");
-  const [productSupplier, setProdductSupplier] = useState("");
-  const [productAvailabilityStatus, setProductAvailabilityStatus] =
-    useState("");
-  const [productDeliveryOptions, setProductDeliveryOptions] = useState("");
-  const [productBrandName, setProductBrandName] = useState("");
-  const [productModelNumber, setProductModelNumber] = useState("");
-  const [productDiscount, setProductDiscount] = useState("");
-  const [productCountryofOrigin, setProductCountryofOrigin] = useState("");
+  const [category, setProductCategory] = useState("");
+  const [licenseType, setlicenseType] = useState("");
+  const [price, setProductPrice] = useState("");
+  const [currency, setProductCurrency] = useState("");
+  const [quantity, setProductQuantity] = useState("");
+  const [supplier, setProdductSupplier] = useState("");
+  const [availabilityStatus, setProductAvailabilityStatus] = useState("");
+  const [deliveryOptions, setProductDeliveryOptions] = useState("");
+  const [brandName, setProductBrandName] = useState("");
+  const [modelNumber, setProductModelNumber] = useState("");
+  const [discount, setProductDiscount] = useState("");
+  const [countryofOrigin, setProductCountryofOrigin] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const updatedFormData = {
+      productName,
+      companyName,
+      category,
+      licenseType,
+      price,
+      currency,
+      quantity,
+      supplier,
+      availabilityStatus: Boolean(availabilityStatus),
+      deliveryOptions,
+      brandName,
+      modelNumber,
+      discount,
+      countryofOrigin,
+    };
+    //alert("Product Details Submitted Successfully" + JSON.stringify(updatedFormData, null, 2));
+    fetch(config.ProductServiceApiUrl,
+
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedFormData),
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          return response.text().then((errorMessage) => {
+            throw new Error(`HTTP ${response.status}: ${errorMessage}`);
+          });
+        }
+        return response.json();
+      })
+      .then((data) => console.log("Success:", data))
+      .catch((error) => console.error("Fetch Error:", error.message));
+    
+
     console.log("Form submitted");
   };
 
@@ -66,7 +106,7 @@ function ProductDetails() {
                   type="text"
                   id="productCategory"
                   placeholder="Product Category"
-                  value={productCategory}
+                  value={category}
                   onChange={(e) => setProductCategory(e.target.value)}
                 />
               </div>
@@ -78,10 +118,10 @@ function ProductDetails() {
               <div className="Licence-Type-Text">
                 <input
                   type="text"
-                  id="LicenceType"
+                  id="licenseType"
                   placeholder="Licence Type"
-                  value={licenceType}
-                  onChange={(e) => setLicenceType(e.target.value)}
+                  value={licenseType}
+                  onChange={(e) => setlicenseType(e.target.value)}
                 />
               </div>
             </div>
@@ -94,7 +134,7 @@ function ProductDetails() {
                   type="text"
                   id="productPrice"
                   placeholder="Product Price"
-                  value={productPrice}
+                  value={price}
                   onChange={(e) => setProductPrice(e.target.value)}
                 />
               </div>
@@ -108,7 +148,7 @@ function ProductDetails() {
                   type="text"
                   id="productCurrency"
                   placeholder="Product Currency"
-                  value={productCurrency}
+                  value={currency}
                   onChange={(e) => setProductCurrency(e.target.value)}
                 />
               </div>
@@ -122,7 +162,7 @@ function ProductDetails() {
                   type="text"
                   id="productQuantity"
                   placeholder="Product Quantity"
-                  value={productQuantity}
+                  value={quantity}
                   onChange={(e) => setProductQuantity(e.target.value)}
                 />
               </div>
@@ -139,7 +179,7 @@ function ProductDetails() {
                   type="text"
                   id="productSupplier"
                   placeholder="Product Supplier"
-                  value={productSupplier}
+                  value={supplier}
                   onChange={(e) => setProdductSupplier(e.target.value)}
                 />
               </div>
@@ -155,7 +195,7 @@ function ProductDetails() {
                   type="text"
                   id="productAvailabilityStatus"
                   placeholder="Product Availability Status"
-                  value={productAvailabilityStatus}
+                  value={availabilityStatus}
                   onChange={(e) => setProductAvailabilityStatus(e.target.value)}
                 />
               </div>
@@ -171,7 +211,7 @@ function ProductDetails() {
                   type="text"
                   id="productDeliveryOptions"
                   placeholder="Product Delivery Options"
-                  value={productDeliveryOptions}
+                  value={deliveryOptions}
                   onChange={(e) => setProductDeliveryOptions(e.target.value)}
                 />
               </div>
@@ -186,7 +226,7 @@ function ProductDetails() {
                   type="text"
                   id="productBrandName"
                   placeholder="Product Brand Name"
-                  value={productBrandName}
+                  value={brandName}
                   onChange={(e) => setProductBrandName(e.target.value)}
                 />
               </div>
@@ -200,7 +240,7 @@ function ProductDetails() {
                   type="text"
                   id="productModelNumber"
                   placeholder="Product Model Number"
-                  value={productModelNumber}
+                  value={modelNumber}
                   onChange={(e) => setProductModelNumber(e.target.value)}
                 />
               </div>
@@ -214,7 +254,7 @@ function ProductDetails() {
                   type="text"
                   id="productDiscount"
                   placeholder="Product Discount"
-                  value={productDiscount}
+                  value={discount}
                   onChange={(e) => setProductDiscount(e.target.value)}
                 />
               </div>
@@ -230,10 +270,15 @@ function ProductDetails() {
                   type="text"
                   id="productCountryofOrigin"
                   placeholder="Product Country of Origin"
-                  value={productCountryofOrigin}
+                  value={countryofOrigin}
                   onChange={(e) => setProductCountryofOrigin(e.target.value)}
                 />
               </div>
+            </div>
+
+            <div className="product-submit">
+              <button type="submit">Submit</button>
+
             </div>
           </div>
         </form>
