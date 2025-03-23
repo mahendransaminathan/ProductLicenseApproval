@@ -138,6 +138,8 @@
 {
   width: 125px;
 }
+
+
 .company-dropdown {
   position: relative;
   z-index: 9999;
@@ -147,7 +149,7 @@
 .company {
   width: 260px;
   height: 50px;
-  color: chocolate;
+  color: black;
   background-color: white; /* Ensure dropdown background is visible */
   border: 1px solid #ccc; /* Add a border for better visibility */
 }

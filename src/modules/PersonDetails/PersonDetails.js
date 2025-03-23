@@ -40,7 +40,7 @@ function PersonDetails() {
 
     
     // Fetch data every 60 seconds
-    const interval = setInterval(fetchData, 60000);
+    const interval = setInterval(fetchData, 20000);
 
     // Cleanup interval on component unmount
     return () => clearInterval(interval);
@@ -255,6 +255,7 @@ function PersonDetails() {
           </div>
 
           <div className="personal-details-child">
+            
             <div className="Companyname-label">
               <label htmlFor="CompanyName">Company Name</label>
             </div>
@@ -266,9 +267,10 @@ function PersonDetails() {
                 value={selectedCompany}
                 onChange={(e) => setSelectedCompany(e.target.value)}
               >
-                {companyName.map((item) => (
-                  <option key={item.id} value={item.id}>{item.label}</option>
-                ))}
+                {companyName.map((item) => {
+                  // alert("Company Names Fetched Successfully" + JSON.stringify(item, null, 2));
+                  return <option key={item.id} value={item.id}>{item}</option>;
+                })}
               </select>
             </div>
           </div>
