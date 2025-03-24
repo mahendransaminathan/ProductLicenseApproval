@@ -3,12 +3,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+
 }
 
 .PersonApp
 {
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
   
   margin: 0;
 }
@@ -17,6 +24,7 @@
 {
   display: flex;
   background-color: #DCB32C;
+  width: 100%;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -24,6 +32,7 @@
   overflow: hidden;
   padding: 20px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .person-details
@@ -36,6 +45,7 @@
   margin: 0 auto;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .personal-details-child

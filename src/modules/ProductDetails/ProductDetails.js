@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./ProductDetails.css";
 import config from "../../config";
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function ProductDetails() {
   const [productName, setProductName] = useState("");
@@ -65,222 +66,156 @@ function ProductDetails() {
 
   return (
     <div className="ProductApp">
+      
       <div className="product-details-container">
-        <form className="product-details" onSubmit={handleSubmit}>
+
+        <div className="header-container">
           <h1>Product Details</h1>
+        </div>
+        
+        <form className="product-details" onSubmit={handleSubmit}>
+          
           <div className="product-details-left">
-            <div className="product-name">
-              <div className="product-name-label">
-                <label htmlFor="productName">Product Name</label>
-              </div>
-              <div className="product-name-text">
-                <input
-                  type="text"
-                  id="productName"
-                  placeholder="Product Name"
+                <TextField
+                  fullWidth
+                  label="Product Name"                  
+                  id="productName"                  
                   value={productName}
                   onChange={(e) => setProductName(e.target.value)}
+                  variant="outlined"
                 />
-              </div>
-            </div>
-            <div className="company-name">
-              <div className="company-name-label">
-                <label htmlFor="companyName">Company Name</label>
-              </div>
-              <div className="company-name-text">
-                <input
-                  type="text"
-                  id="companyName"
-                  placeholder="Company Name"
+              
+              
+                <TextField
+                  fullWidth
+                  label="Company Name"                  
+                  id="companyName"                  
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-category">
-              <div className="product-category-label">
-                <label htmlFor="productCategory">Product Category</label>
-              </div>
-              <div className="product-category-text">
-                <input
-                  type="text"
-                  id="productCategory"
-                  placeholder="Product Category"
+              
+              
+                <TextField
+                  fullWidth
+                  label="Product Category"                  
+                  id="productCategory"                  
                   value={category}
                   onChange={(e) => setProductCategory(e.target.value)}
+                  variant="outlined"
                 />
-              </div>
-            </div>
-            <div className="Licence-Type">
-              <div className="Licence-Type-Label">
-                <label htmlFor="LicenceType">Licence Type</label>
-              </div>
-              <div className="Licence-Type-Text">
-                <input
-                  type="text"
-                  id="licenseType"
-                  placeholder="Licence Type"
+              
+                <TextField
+                  fullWidth
+                  label="Licence Type"                  
+                  id="licenseType"                  
                   value={licenseType}
                   onChange={(e) => setlicenseType(e.target.value)}
+                  variant="outlined"
                 />
-              </div>
-            </div>
-            <div className="product-price">
-              <div className="product-price-label">
-                <label htmlFor="productPrice">Product Price</label>
-              </div>
-              <div className="product-price-text">
-                <input
-                  type="text"
-                  id="productPrice"
-                  placeholder="Product Price"
+              
+                <TextField
+                  fullWidth
+                  label="Price"                  
+                  id="productPrice"                  
                   value={price}
                   onChange={(e) => setProductPrice(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-currency">
-              <div className="product-currency-label">
-                <label htmlFor="productCurrency">Product Currency</label>
-              </div>
-              <div className="product-currency-text">
-                <input
-                  type="text"
+              
+                <TextField
+                  fullWidth
+                  label="Currency"                  
                   id="productCurrency"
-                  placeholder="Product Currency"
+                  placeholder="Currency"
                   value={currency}
                   onChange={(e) => setProductCurrency(e.target.value)}
+                  variant="outlined"
                 />
-              </div>
-            </div>
-            <div className="product-quantity">
-              <div className="product-quantity-label">
-                <label htmlFor="productQuantity">Product Quantity</label>
-              </div>
-              <div className="product-quantity-text">
-                <input
-                  type="text"
-                  id="productQuantity"
-                  placeholder="Product Quantity"
+              
+                <TextField
+                  fullWidth
+                  label="Quantity"                  
+                  id="productQuantity"                  
                   value={quantity}
                   onChange={(e) => setProductQuantity(e.target.value)}
+                  variant="outlined"
                 />
-              </div>
-            </div>
           </div>
 
           <div className="product-details-right">
-            <div className="product-supplier">
-              <div className="product-supplier-label">
-                <label htmlFor="productSupplier">Product Supplier</label>
-              </div>
-              <div className="product-supplier-text">
-                <input
-                  type="text"
-                  id="productSupplier"
-                  placeholder="Product Supplier"
+            
+              
+                <TextField
+                  fullWidth
+                  label="Supplier"
+                  variant="outlined"                  
+                  id="productSupplier"                  
                   value={supplier}
                   onChange={(e) => setProdductSupplier(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-availabilitystatus">
-              <div className="product-availabilitystatus-label">
-                <label htmlFor="productAvailabilityStatus">
-                  Product Availability Status
-                </label>
-              </div>
-              <div className="product-availabilitystatus-text">
-                <input
-                  type="text"
-                  id="productAvailabilityStatus"
-                  placeholder="Product Availability Status"
+              
+              
+                <TextField
+                  fullWidth
+                  label="Availability Status"
+                  variant="outlined"                  
+                  id="productAvailabilityStatus"                  
                   value={availabilityStatus}
                   onChange={(e) => setProductAvailabilityStatus(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-deliveryOptions">
-              <div className="product-deliveryOptions-label">
-                <label htmlFor="productDeliveryOptions">
-                  Product Delivery Options
-                </label>
-              </div>
-              <div className="product-deliveryOptions-text">
-                <input
-                  type="text"
-                  id="productDeliveryOptions"
-                  placeholder="Product Delivery Options"
+                <TextField
+                  fullWidth
+                  label="Delivery Options"
+                  variant="outlined"                  
+                  id="productDeliveryOptions"                  
                   value={deliveryOptions}
                   onChange={(e) => setProductDeliveryOptions(e.target.value)}
                 />
-              </div>
-            </div>
-
-            <div className="product-brandname">
-              <div className="product-brandname-label">
-                <label htmlFor="productBrandName">Product Brand Name</label>
-              </div>
-              <div className="product-brandname-text">
-                <input
-                  type="text"
-                  id="productBrandName"
-                  placeholder="Product Brand Name"
+  
+                <TextField
+                  fullWidth
+                  label="Brand Name"
+                  variant="outlined"                  
+                  id="productBrandName"                  
                   value={brandName}
                   onChange={(e) => setProductBrandName(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-modelNumber">
-              <div className="product-modelNumber-label">
-                <label htmlFor="productModelNumber">Product Model Number</label>
-              </div>
-              <div className="product-modelNumber-text">
-                <input
-                  type="text"
-                  id="productModelNumber"
-                  placeholder="Product Model Number"
+                <TextField
+                  fullWidth
+                  label="Model Number"
+                  variant="outlined"                  
+                  id="productModelNumber"                  
                   value={modelNumber}
                   onChange={(e) => setProductModelNumber(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-discount">
-              <div className="product-discount-label">
-                <label htmlFor="productDiscount">Product Discount</label>
-              </div>
-              <div className="product-discount-text">
-                <input
-                  type="text"
-                  id="productDiscount"
-                  placeholder="Product Discount"
+              
+                <TextField  
+                  fullWidth
+                  label="Discount"
+                  variant="outlined"
+                  id="productDiscount"                  
                   value={discount}
                   onChange={(e) => setProductDiscount(e.target.value)}
                 />
-              </div>
-            </div>
-            <div className="product-countryofOrigin">
-              <div className="product-countryofOrigin-label">
-                <label htmlFor="productCountryofOrigin">
-                  Product Country of Origin
-                </label>
-              </div>
-              <div className="product-countryofOrigin-text">
-                <input
-                  type="text"
-                  id="productCountryofOrigin"
-                  placeholder="Product Country of Origin"
+              
+                <TextField
+                  fullWidth
+                  label="Country of Origin"
+                  variant="outlined"                  
+                  id="productCountryofOrigin"                  
                   value={countryofOrigin}
                   onChange={(e) => setProductCountryofOrigin(e.target.value)}
                 />
-              </div>
+              
             </div>
 
-            <div className="product-submit">
-              <button type="submit">Submit</button>
+          <div className="product-submit">
+              <Button
+                variant="contained"
+                color="primary"
+               type="submit">Submit</Button>
 
             </div>
-          </div>
+
         </form>
       </div>
     </div>

@@ -67,126 +67,87 @@ function CompanyDetails() {
             <h1>Company Details</h1>
           </div>
           <div className="company-details-child">
-            <div className="company-Name-Label">
-              <label htmlFor="CompanyName">Company Name</label>
-            </div>
-            <div className="company-Name-Text">
-              <input
-                type="text"
-                id="companyname"
+            
+              <TextField
+                fullWidth                
+                label="Company Name"
                 value={companyname}
                 onChange={(e) => setCompanyName(e.target.value)}
-                placeholder="Company Name"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="company-details-child">
-            <div className="reg-Num-Label">Registration Number</div>
-            <div className="reg-Num-Text">
-              <input
-                type="text"
-                id="RegNumber"
+            
+              <TextField
+                fullWidth                
+                label="RegNumber"                
                 value={registrationNumber}
                 onChange={(e) => setRegistrationNumber(e.target.value)}
-                placeholder="Registration Number"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="company-details-child">
-            <div className="address-Label">
-              <label htmlFor="street">Address</label>
-            </div>
-            <div className="address-Text">
-              <input
-                type="text"
-                placeholder="Street Address"
+            
+              <TextField
+                fullWidth       
+                label="Street Address"
                 value={address}
                 onChange={(e) => setAddressLine(e.target.value)}
-                className="street"
+                variant="outlined"
                 
               />
-            </div>
-          </div>
-          <div className="company-details-child">
-            <div className="city-Label">
-              <label htmlFor="companyCity">City</label>
-            </div>
-            <div className="city-Text">
-              <input
-                type="text"
-                placeholder="City"
+            
+              <TextField
+                fullWidth       
+                label="City"               
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
-                className="companycity"
+                variant="outlined"
                 
               />
-            </div>
-          </div>
-
-          <div className="company-details-child">
-            <div className="state-Label">
-              <label htmlFor="companyState">State</label>
-            </div>
-            <div className="state-Text">
-              <input
-                type="text"
-                placeholder="State"
+            
+              <TextField
+                fullWidth       
+                label="state"                
                 value={state}
                 onChange={(e) => setState(e.target.value)}
-                className="companystate"
-                
+                variant="outlined"                
               />
-            </div>
-          </div>
-
-          <div className="company-details-child">
-            <div className="country-Label">
-              <label htmlFor="country">Country</label>
-            </div>
-
-            <div className="country-Text">
-              <select
-                id="country"
-                name="companyselectedCountry"
+           
+            <FormControl variant="outlined" fullWidth>
+              <InputLabel id="country">Country</InputLabel>
+              <Select                
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
+                label="Country"
+                variant="outlined"
               >
-                <option value="Select a Country">Select a Country</option>
-                <option value="UnitedStates">United States</option>
-                <option value="UnitedKingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="Canada">Canada</option>
-                <option value="Japan">Japan</option>
-              </select>
-            </div>
-          </div>
-
-          <div className="company-details-child">
-            <div className="postal-Label">
-              <label htmlFor="Postal">Postal Code</label>
-            </div>
-            <div className="postal-Text">
-              <input
-                type="text"
-                placeholder="Postal / Zip Code"
+                <MenuItem value="Select a Country">Select a Country</MenuItem>
+                <MenuItem value="UnitedStates">United States</MenuItem>
+                <MenuItem value="UnitedKingdom">United Kingdom</MenuItem>
+                <MenuItem value="Australia">Australia</MenuItem>
+                <MenuItem value="Germany">Germany</MenuItem>
+                <MenuItem value="France">France</MenuItem>
+                <MenuItem value="Canada">Canada</MenuItem>
+                <MenuItem value="Japan">Japan</MenuItem>
+              </Select>
+            </FormControl>
+            
+              <TextField
+                fullWidth       
+                label="Postal Code"
                 value={eircode}
                 onChange={(e) => setZip(e.target.value)}
-                className="companypostal"
+                variant="outlined"
                 
               />
-            </div>
+            
           </div>
-
-          <div className="company-details-child">
-            <div className="button-empty-space"></div>
-            <div className="button-ccontainer">
-              <button className="button-text">Submit</button>
-            </div>
-          </div>
+            
+              <Button 
+              type = "submit"
+              variant="contained"
+              color="primary"
+              fullWidth
+              >Submit</Button>
+          
+          
         </form>
       </div>
     </div>

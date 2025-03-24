@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import config from "../../config";
 
 import "./PersonDetails.css"; // Adjust the path if the CSS file is in a different folder
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function PersonDetails() {
   const navigate = useNavigate();
@@ -101,35 +102,23 @@ function PersonDetails() {
           </div>
 
           <div className="personal-details-child">
-            <div className="name-label">
-              <label htmlFor="PersonsName">Person's Name</label>
-            </div>
 
-            <div className="firstnamediv">
-              <input
-                type="text"
-                id="first"
+            
+              <TextField
+                fullWidth
+                label="First Name"
                 value={firstname}
                 onChange={(e) => setFirstName(e.target.value)}
-                placeholder="First"
+                variant="outlined"
               />
-            </div>
-            <div className="lastnamediv">
-              <input
-                type="text"
-                id="last"
+              <TextField
+                fullWidth
+                label="Last Name"                
                 value={lastname}
                 onChange={(e) => setLastName(e.target.value)}
-                placeholder="Last"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="personal-details-child">
-            <div className="gender-label">
-              <label htmlFor="genderlabel">Gender</label>
-            </div>
-
+            
             <div className="gender-grid">
               <label className="malegender">
                 <input
@@ -153,134 +142,106 @@ function PersonDetails() {
                 Female
               </label>
             </div>
-          </div>
+          
 
-          <div className="personal-details-child">
-            <div className="phone-label">
-              <label htmlFor="phone">Phone</label>
-            </div>
-            <div className="phone-text">
-              <input
-                type="tel"
-                placeholder="Phone (### ### ####)"
+              <TextField
+                fullWidth
+                label="Phone"                
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="phone-textbox"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="personal-details-child">
-            <div className="dob-label">
-              <label htmlFor="dob">Date of Birth</label>
-            </div>
-            <div className="dob-text">
-              <input
+            
+              <TextField
+                fullWidth
+                label="Date of Birth"                
                 type="date"
                 value={dob}
                 onChange={(e) => setDob(e.target.value)}
                 className="dob-textbox"
+                variant="outlined"
               />
-            </div>
-          </div>
+            
 
-          <div className="personal-details-child">
-            <div className="address-label">
-              <label htmlFor="street">Address</label>
-            </div>
-
-            <div className="address-text">
-              <input
-                type="text"
-                placeholder="Street Address"
+            
+              <TextField
+                fullWidth
+                label="Street Address"                         
                 value={addressline}
                 onChange={(e) => setAddressLine(e.target.value)}
                 className="address-textbox"
+                variant="outlined"
               />
-            </div>
-          </div>
+            
 
-          <div className="personal-details-child">
-            <div className="city-empty-child"> </div>
-
-            <div className="city-text">
-              <input
-                type="text"
+            
+              <TextField
+                fullWidth
+                label="City"                
                 placeholder="City"
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
                 className="city"
+                variant="outlined"
               />
-            </div>
-            <div className="state-text">
-              <input
-                type="text"
-                placeholder="State"
+            
+              <TextField
+                fullWidth
+                label="State"                               
                 value={state}
                 onChange={(e) => setState(e.target.value)}
                 className="state"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="personal-details-child">
-            <div className="select-empty-child"></div>
-            <div className="select-dropdown">
-              <select
+            
+            
+            <FormControl fullWidth className="select-dropdown">
+              <InputLabel>Country</InputLabel>
+              <Select
                 className="country"
-                name="selectedCountry"
+                label="Country"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
               >
-                <option value="SelectCountry">Select a Country</option>
-                <option value="UnitedStates">United States</option>
-                <option value="UnitedKingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="Canada">Canada</option>
-                <option value="Japan">Japan</option>
-              </select>
-            </div>
+                <MenuItem value="SelectCountry">Select a Country</MenuItem>
+                <MenuItem value="UnitedStates">United States</MenuItem>
+                <MenuItem value="UnitedKingdom">United Kingdom</MenuItem>
+                <MenuItem value="Australia">Australia</MenuItem>
+                <MenuItem value="Germany">Germany</MenuItem>
+                <MenuItem value="France">France</MenuItem>
+                <MenuItem value="Canada">Canada</MenuItem>
+                <MenuItem value="Japan">Japan</MenuItem>
+              </Select>
+            </FormControl>
 
-            <div className="postal-text">
-              <input
-                type="text"
-                placeholder="Postal / Zip Code"
+            
+              <TextField
+                fullWidth
+                label="Postal Code"                              
                 value={zip}
                 onChange={(e) => setZip(e.target.value)}
                 className="postal"
+                variant="outlined"
               />
-            </div>
-          </div>
-
-          <div className="personal-details-child">
             
-            <div className="Companyname-label">
-              <label htmlFor="CompanyName">Company Name</label>
-            </div>
 
-            <div className="company-dropdown">
-              <select
-                className="company"
-                name="selectedCompany"
+            <FormControl fullWidth className="company-dropdown">
+              <Select
+                label="Company"
+                className="company"                
                 value={selectedCompany}
                 onChange={(e) => setSelectedCompany(e.target.value)}
               >
                 {companyName.map((item) => {
                   // alert("Company Names Fetched Successfully" + JSON.stringify(item, null, 2));
-                  return <option key={item.id} value={item.id}>{item}</option>;
+                  return <MenuItem key={item.id} value={item.id}>{item}</MenuItem>;
                 })}
-              </select>
-            </div>
-          </div>
-
-          <div className="personal-details-child">
-            <div className="button-empty-child1"></div>
-            <div className="button-empty-child2"></div>
-            <div className="button-container">
-              <button className="buttontext">Submit</button>
-            </div>
+              </Select>
+            </FormControl>
+            
+              <Button type="submit" variant="contained" 
+              className="buttontext">Submit</Button>
           </div>
         </form>
       </div>

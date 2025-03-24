@@ -8,6 +8,7 @@
     justify-content: flex-start;
     width: 100%;
     min-height: 100vh;
+    background-color: #DCB32C;
 }
 
 .links
@@ -15,6 +16,8 @@
   display: flex;
   gap: 15px;
   padding: 10px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .content-container

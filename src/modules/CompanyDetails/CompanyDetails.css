@@ -4,6 +4,7 @@
     flex-direction: column;
     text-align: center;
     
+    
 }
 
 .company-details-container
@@ -15,19 +16,23 @@
     height: 100vh;
     overflow: hidden;
     position: relative;
+    
 }
 
 .company-details
 {
     display: flex;    
-    width: 500px;    
+    width: 500px;
+        
     flex-direction: column;
+    gap: 40px;
+
 }
 
 .company-details-child
 {
     display: flex;
-    height: 60px;    
+    height: 40px;    
     align-items: center;
     justify-content: center;       
 }
@@ -68,7 +73,7 @@ select
 {
     display: flex;
     width: 250px;
-    height: 125px;
+    height: 75px;
     align-items: center;
     justify-content: flex-start;
 }
