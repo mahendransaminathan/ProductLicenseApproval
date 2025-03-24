@@ -114,8 +114,9 @@ function PersonDetails() {
           
         }}
       >
+        <Box sx={{flex: 1, display: "flex", justifyContent: "center"}}>
         <h1>Personal Details</h1>
-
+        </Box>
         <Box sx={{ display: "flex", gap: 2 }}>
           <TextField
             label="First Name"
@@ -158,6 +159,7 @@ function PersonDetails() {
           </FormControl>
         </Box>
 
+        <Box sx={{ display: "flex", gap: 2, width: "275px" }}>        
         <TextField
           label="Phone"
           value={phone}
@@ -165,7 +167,9 @@ function PersonDetails() {
           className="phone-textbox"
           variant="outlined"
         />
+        </Box>
 
+        <Box sx={{ display: "flex", gap: 2, width: "500px" }}>
         <TextField
           label="Date of Birth"
           type="date"
@@ -173,8 +177,10 @@ function PersonDetails() {
           onChange={(e) => setDob(e.target.value)}
           className="dob-textbox"
           variant="outlined"
+          sx={{width: "275px"}}
+          InputLabelProps={{shrink: true,}}
         />
-
+        </Box>
         <TextField
           label="Street Address"
           value={addressline}
@@ -203,7 +209,7 @@ function PersonDetails() {
 
         <Box sx={{ display: "flex", gap: 2 }}>
           <FormControl
-          sx={{width: "275px"}}
+          sx={{width: "280px", height: "72px"}}
           className="select-dropdown">
             <InputLabel>Country</InputLabel>
             <Select
@@ -211,6 +217,7 @@ function PersonDetails() {
               label="Country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
+              sx={{height: "72px"}}
             >
               <MenuItem value="SelectCountry">Select a Country</MenuItem>
               <MenuItem value="UnitedStates">United States</MenuItem>
@@ -232,7 +239,10 @@ function PersonDetails() {
           />
         </Box>
 
-        <FormControl className="company-dropdown">
+        <FormControl 
+        sx={{width: "275px"}}
+        className="company-dropdown">
+          
           <InputLabel>Company</InputLabel>
           <Select
             label="Company"
@@ -251,11 +261,22 @@ function PersonDetails() {
           </Select>
         </FormControl>
 
-        <Button type="submit" variant="contained" className="buttontext">
-          Submit
-        </Button>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            flexDirection: "row",
+          }}>
+            <Box sx={{flex: 1}}> </Box>
+            <Box sx={{flex: 1, display: "flex", justifyContent: "flex-end"}}>
+              <Button type="submit" variant="contained" className="buttontext">
+              Submit
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       </Box>
-    </Box>
+    
   );
 }
 

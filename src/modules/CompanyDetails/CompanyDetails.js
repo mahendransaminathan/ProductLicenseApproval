@@ -89,9 +89,9 @@ function CompanyDetails() {
           borderRadius: 2,          
         }}
       >
-        <div className="headername">
+        <Box sx={{flex: 1, display: "flex", justifyContent: "center"}}>
           <h1>Company Details</h1>
-        </div>
+        </Box>
 
         <TextField
           label="Company Name"
