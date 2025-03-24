@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ProductDetails.css";
 import config from "../../config";
-import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
+import { Box, Button, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 
 function ProductDetails() {
   const [productName, setProductName] = useState("");
@@ -65,19 +65,39 @@ function ProductDetails() {
   };
 
   return (
-    <div className="ProductApp">
+    
+    <Box 
+    sx={{ 
+      display: "flex", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      height: "100vh" }}>
+    
+    <Box 
+    component="form"
+    onSubmit={handleSubmit}
+    sx={{
+      display: "flex",
+      flexDirection: "column",
+      width: "50%",
+      gap: 2,
+      padding: "20px",
+      boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+      borderRadius: "10px",
       
-      <div className="product-details-container">
-
-        <div className="header-container">
+    }}>        
           <h1>Product Details</h1>
-        </div>
-        
-        <form className="product-details" onSubmit={handleSubmit}>
+
+          <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            flexDirection: "row",
+          }}>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+      
           
-          <div className="product-details-left">
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Product Name"                  
                   id="productName"                  
                   value={productName}
@@ -86,8 +106,7 @@ function ProductDetails() {
                 />
               
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Company Name"                  
                   id="companyName"                  
                   value={companyName}
@@ -95,8 +114,7 @@ function ProductDetails() {
                 />
               
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Product Category"                  
                   id="productCategory"                  
                   value={category}
@@ -104,8 +122,7 @@ function ProductDetails() {
                   variant="outlined"
                 />
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Licence Type"                  
                   id="licenseType"                  
                   value={licenseType}
@@ -113,16 +130,14 @@ function ProductDetails() {
                   variant="outlined"
                 />
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Price"                  
                   id="productPrice"                  
                   value={price}
                   onChange={(e) => setProductPrice(e.target.value)}
                 />
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Currency"                  
                   id="productCurrency"
                   placeholder="Currency"
@@ -131,21 +146,18 @@ function ProductDetails() {
                   variant="outlined"
                 />
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Quantity"                  
                   id="productQuantity"                  
                   value={quantity}
                   onChange={(e) => setProductQuantity(e.target.value)}
                   variant="outlined"
                 />
-          </div>
+          </Box>
 
-          <div className="product-details-right">
-            
-              
-                <TextField
-                  fullWidth
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                                 
+                <TextField                  
                   label="Supplier"
                   variant="outlined"                  
                   id="productSupplier"                  
@@ -154,16 +166,14 @@ function ProductDetails() {
                 />
               
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Availability Status"
                   variant="outlined"                  
                   id="productAvailabilityStatus"                  
                   value={availabilityStatus}
                   onChange={(e) => setProductAvailabilityStatus(e.target.value)}
                 />
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Delivery Options"
                   variant="outlined"                  
                   id="productDeliveryOptions"                  
@@ -171,16 +181,14 @@ function ProductDetails() {
                   onChange={(e) => setProductDeliveryOptions(e.target.value)}
                 />
   
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Brand Name"
                   variant="outlined"                  
                   id="productBrandName"                  
                   value={brandName}
                   onChange={(e) => setProductBrandName(e.target.value)}
                 />
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Model Number"
                   variant="outlined"                  
                   id="productModelNumber"                  
@@ -188,8 +196,7 @@ function ProductDetails() {
                   onChange={(e) => setProductModelNumber(e.target.value)}
                 />
               
-                <TextField  
-                  fullWidth
+                <TextField                  
                   label="Discount"
                   variant="outlined"
                   id="productDiscount"                  
@@ -197,28 +204,25 @@ function ProductDetails() {
                   onChange={(e) => setProductDiscount(e.target.value)}
                 />
               
-                <TextField
-                  fullWidth
+                <TextField                  
                   label="Country of Origin"
                   variant="outlined"                  
                   id="productCountryofOrigin"                  
                   value={countryofOrigin}
                   onChange={(e) => setProductCountryofOrigin(e.target.value)}
                 />
-              
-            </div>
 
-          <div className="product-submit">
+          </Box>
+          </Box>
+          
               <Button
                 variant="contained"
                 color="primary"
                type="submit">Submit</Button>
 
-            </div>
-
-        </form>
-      </div>
-    </div>
+          
+        </Box>
+      </Box>    
   );
 }
 

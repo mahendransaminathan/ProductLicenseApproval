@@ -3,7 +3,15 @@ import React, { useState } from "react";
 import "./CompanyDetails.css"; // Adjust the path if the CSS file is in a different folder
 import { v4 as uuidv4 } from "uuid";
 import config from "../../config";
-import { TextField, Button, Select, MenuItem, InputLabel, FormControl, Box } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Select,
+  MenuItem,
+  InputLabel,
+  FormControl,
+  Box,
+} from "@mui/material";
 
 function CompanyDetails() {
   //const { formData, setFormData } = useFormData();
@@ -22,7 +30,6 @@ function CompanyDetails() {
     e.preventDefault(); // Prevent form from reloading the page
     setID(uuidv4());
     const updatedFormData = {
-      
       id,
       companyname,
       registrationNumber,
@@ -32,7 +39,9 @@ function CompanyDetails() {
       country,
       eircode,
     };
-    alert("Company Details Submitted Successfully" + JSON.stringify(id, null, 2));
+    alert(
+      "Company Details Submitted Successfully" + JSON.stringify(id, null, 2)
+    );
     //setFormData(updatedFormData);
     //      navigate('/Company');
 
@@ -45,7 +54,6 @@ function CompanyDetails() {
     })
       .then((response) => {
         if (!response.ok) {
-
           return response.text().then((errorMessage) => {
             throw new Error(`HTTP ${response.status}: ${errorMessage}`);
           });
@@ -59,98 +67,98 @@ function CompanyDetails() {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-    <div className="CompanyApp">
-      <div className="company-details-container">
-        <form className="company-details" onSubmit={handleSubmit}>
-          <div className="headername">
-            <h1>Company Details</h1>
-          </div>
-          <div className="company-details-child">
-            
-              <TextField
-                fullWidth                
-                label="Company Name"
-                value={companyname}
-                onChange={(e) => setCompanyName(e.target.value)}
-                variant="outlined"
-              />
-            
-              <TextField
-                fullWidth                
-                label="RegNumber"                
-                value={registrationNumber}
-                onChange={(e) => setRegistrationNumber(e.target.value)}
-                variant="outlined"
-              />
-            
-              <TextField
-                fullWidth       
-                label="Street Address"
-                value={address}
-                onChange={(e) => setAddressLine(e.target.value)}
-                variant="outlined"
-                
-              />
-            
-              <TextField
-                fullWidth       
-                label="City"               
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                variant="outlined"
-                
-              />
-            
-              <TextField
-                fullWidth       
-                label="state"                
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                variant="outlined"                
-              />
-           
-            <FormControl variant="outlined" fullWidth>
-              <InputLabel id="country">Country</InputLabel>
-              <Select                
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                label="Country"
-                variant="outlined"
-              >
-                <MenuItem value="Select a Country">Select a Country</MenuItem>
-                <MenuItem value="UnitedStates">United States</MenuItem>
-                <MenuItem value="UnitedKingdom">United Kingdom</MenuItem>
-                <MenuItem value="Australia">Australia</MenuItem>
-                <MenuItem value="Germany">Germany</MenuItem>
-                <MenuItem value="France">France</MenuItem>
-                <MenuItem value="Canada">Canada</MenuItem>
-                <MenuItem value="Japan">Japan</MenuItem>
-              </Select>
-            </FormControl>
-            
-              <TextField
-                fullWidth       
-                label="Postal Code"
-                value={eircode}
-                onChange={(e) => setZip(e.target.value)}
-                variant="outlined"
-                
-              />
-            
-          </div>
-            
-              <Button 
-              type = "submit"
-              variant="contained"
-              color="primary"
-              fullWidth
-              >Submit</Button>
-          
-          
-        </form>
-      </div>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+      }}
+    >
+      <Box
+        component="form"
+        onSubmit={handleSubmit}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 2,
+          width: "100%",
+          maxWidth: "500px",
+          padding: 3,
+          borderRadius: 2,
+          boxShadow: 2,
+        }}
+      >
+        <div className="headername">
+          <h1>Company Details</h1>
+        </div>
+
+        <TextField
+          label="Company Name"
+          value={companyname}
+          onChange={(e) => setCompanyName(e.target.value)}
+          variant="outlined"
+        />
+
+        <TextField
+          label="RegNumber"
+          value={registrationNumber}
+          onChange={(e) => setRegistrationNumber(e.target.value)}
+          variant="outlined"
+        />
+
+        <TextField
+          label="Street Address"
+          value={address}
+          onChange={(e) => setAddressLine(e.target.value)}
+          variant="outlined"
+        />
+
+        <TextField
+          label="City"
+          value={city}
+          onChange={(e) => setCity(e.target.value)}
+          variant="outlined"
+        />
+
+        <TextField
+          label="state"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+          variant="outlined"
+        />
+
+        <FormControl variant="outlined" fullWidth>
+          <InputLabel id="country">Country</InputLabel>
+          <Select
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+            label="Country"
+            variant="outlined"
+          >
+            <MenuItem value="Select a Country">Select a Country</MenuItem>
+            <MenuItem value="UnitedStates">United States</MenuItem>
+            <MenuItem value="UnitedKingdom">United Kingdom</MenuItem>
+            <MenuItem value="Australia">Australia</MenuItem>
+            <MenuItem value="Germany">Germany</MenuItem>
+            <MenuItem value="France">France</MenuItem>
+            <MenuItem value="Canada">Canada</MenuItem>
+            <MenuItem value="Japan">Japan</MenuItem>
+          </Select>
+        </FormControl>
+
+        <TextField
+          label="Postal Code"
+          value={eircode}
+          onChange={(e) => setZip(e.target.value)}
+          variant="outlined"
+        />
+
+        <Button type="submit" variant="contained" color="primary" fullWidth>
+          Submit
+        </Button>
+      </Box>
     </Box>
   );
 }
