@@ -81,10 +81,7 @@ function ProductDetails() {
       flexDirection: "column",
       width: "50%",
       gap: 2,
-      padding: "20px",
-      boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-      borderRadius: "10px",
-      
+      padding: "20px",      
     }}>        
           <h1>Product Details</h1>
 
@@ -214,12 +211,12 @@ function ProductDetails() {
 
           </Box>
           </Box>
-          
+          <Box sx={{display: "flex", justifyContent: "flex-end"}}>
               <Button
                 variant="contained"
                 color="primary"
                type="submit">Submit</Button>
-
+          </Box>
           
         </Box>
       </Box>    

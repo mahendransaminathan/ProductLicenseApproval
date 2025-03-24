@@ -86,8 +86,7 @@ function CompanyDetails() {
           width: "100%",
           maxWidth: "500px",
           padding: 3,
-          borderRadius: 2,
-          boxShadow: 2,
+          borderRadius: 2,          
         }}
       >
         <div className="headername">

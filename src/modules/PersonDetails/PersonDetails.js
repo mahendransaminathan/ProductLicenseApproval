@@ -111,7 +111,7 @@ function PersonDetails() {
           gap: 2,
           width: "100%",
           padding: 3,
-          borderRadius: 2,
+          
         }}
       >
         <h1>Personal Details</h1>
@@ -135,7 +135,7 @@ function PersonDetails() {
           <FormControl>
             <label className="malegender">
               <input
-                type="checkbox"
+                type="radio"
                 name="gender"
                 value="Male"
                 checked={gender === "Male"}
@@ -147,7 +147,7 @@ function PersonDetails() {
           <FormControl>
             <label className="femalegender">
               <input
-                type="checkbox"
+                type="radio"
                 name="gender"
                 value="Female"
                 checked={gender === "Female"}
@@ -202,7 +202,9 @@ function PersonDetails() {
         </Box>
 
         <Box sx={{ display: "flex", gap: 2 }}>
-          <FormControl className="select-dropdown">
+          <FormControl
+          sx={{width: "275px"}}
+          className="select-dropdown">
             <InputLabel>Country</InputLabel>
             <Select
               className="country"
@@ -231,6 +233,7 @@ function PersonDetails() {
         </Box>
 
         <FormControl className="company-dropdown">
+          <InputLabel>Company</InputLabel>
           <Select
             label="Company"
             className="company"
