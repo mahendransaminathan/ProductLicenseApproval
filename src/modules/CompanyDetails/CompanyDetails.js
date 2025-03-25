@@ -98,6 +98,7 @@ function CompanyDetails() {
           value={companyname}
           onChange={(e) => setCompanyName(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <TextField
@@ -105,6 +106,7 @@ function CompanyDetails() {
           value={registrationNumber}
           onChange={(e) => setRegistrationNumber(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <TextField
@@ -112,6 +114,7 @@ function CompanyDetails() {
           value={address}
           onChange={(e) => setAddressLine(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <TextField
@@ -119,6 +122,7 @@ function CompanyDetails() {
           value={city}
           onChange={(e) => setCity(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <TextField
@@ -126,6 +130,7 @@ function CompanyDetails() {
           value={state}
           onChange={(e) => setState(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <FormControl variant="outlined" fullWidth>
@@ -135,6 +140,7 @@ function CompanyDetails() {
             onChange={(e) => setCountry(e.target.value)}
             label="Country"
             variant="outlined"
+            
           >
             <MenuItem value="Select a Country">Select a Country</MenuItem>
             <MenuItem value="UnitedStates">United States</MenuItem>
@@ -152,6 +158,7 @@ function CompanyDetails() {
           value={eircode}
           onChange={(e) => setZip(e.target.value)}
           variant="outlined"
+          size="small"
         />
 
         <Button type="submit" variant="contained" color="primary" fullWidth>

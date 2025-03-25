@@ -123,12 +123,14 @@ function PersonDetails() {
             value={firstname}
             onChange={(e) => setFirstName(e.target.value)}
             variant="outlined"
+            size="small"
           />
           <TextField
             label="Last Name"
             value={lastname}
             onChange={(e) => setLastName(e.target.value)}
             variant="outlined"
+            size="small"
           />
         </Box>
 
@@ -166,6 +168,7 @@ function PersonDetails() {
           onChange={(e) => setPhone(e.target.value)}
           className="phone-textbox"
           variant="outlined"
+          size="small"
         />
         </Box>
 
@@ -187,6 +190,7 @@ function PersonDetails() {
           onChange={(e) => setAddressLine(e.target.value)}
           className="address-textbox"
           variant="outlined"
+          size="small"
         />
         <Box sx={{ display: "flex", gap: 2 }}>
           <TextField
@@ -196,6 +200,7 @@ function PersonDetails() {
             onChange={(e) => setCity(e.target.value)}
             className="city"
             variant="outlined"
+            size="small"
           />
 
           <TextField
@@ -204,12 +209,13 @@ function PersonDetails() {
             onChange={(e) => setState(e.target.value)}
             className="state"
             variant="outlined"
+            size="small"
           />
         </Box>
 
         <Box sx={{ display: "flex", gap: 2 }}>
           <FormControl
-          sx={{width: "280px", height: "72px"}}
+          sx={{width: "280px"}}
           className="select-dropdown">
             <InputLabel>Country</InputLabel>
             <Select
@@ -217,7 +223,7 @@ function PersonDetails() {
               label="Country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              sx={{height: "72px"}}
+              
             >
               <MenuItem value="SelectCountry">Select a Country</MenuItem>
               <MenuItem value="UnitedStates">United States</MenuItem>
@@ -236,6 +242,7 @@ function PersonDetails() {
             onChange={(e) => setZip(e.target.value)}
             className="postal"
             variant="outlined"
+            size="small"
           />
         </Box>
 

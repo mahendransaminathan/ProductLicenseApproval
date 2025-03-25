@@ -109,6 +109,7 @@ function ProductDetails() {
               value={productName}
               onChange={(e) => setProductName(e.target.value)}
               variant="outlined"
+              size="small"
             />
 
             <TextField
@@ -116,6 +117,7 @@ function ProductDetails() {
               id="companyName"
               value={companyName}
               onChange={(e) => setCompanyName(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -124,6 +126,7 @@ function ProductDetails() {
               value={category}
               onChange={(e) => setProductCategory(e.target.value)}
               variant="outlined"
+              size="small"
             />
 
             <TextField
@@ -132,6 +135,7 @@ function ProductDetails() {
               value={licenseType}
               onChange={(e) => setlicenseType(e.target.value)}
               variant="outlined"
+              size="small"
             />
 
             <TextField
@@ -139,6 +143,7 @@ function ProductDetails() {
               id="productPrice"
               value={price}
               onChange={(e) => setProductPrice(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -148,6 +153,7 @@ function ProductDetails() {
               value={currency}
               onChange={(e) => setProductCurrency(e.target.value)}
               variant="outlined"
+              size="small"
             />
 
             <TextField
@@ -156,6 +162,7 @@ function ProductDetails() {
               value={quantity}
               onChange={(e) => setProductQuantity(e.target.value)}
               variant="outlined"
+              size="small"
             />
           </Box>
 
@@ -166,6 +173,7 @@ function ProductDetails() {
               id="productSupplier"
               value={supplier}
               onChange={(e) => setProdductSupplier(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -174,6 +182,7 @@ function ProductDetails() {
               id="productAvailabilityStatus"
               value={availabilityStatus}
               onChange={(e) => setProductAvailabilityStatus(e.target.value)}
+              size="small"
             />
             <TextField
               label="Delivery Options"
@@ -181,6 +190,7 @@ function ProductDetails() {
               id="productDeliveryOptions"
               value={deliveryOptions}
               onChange={(e) => setProductDeliveryOptions(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -189,6 +199,7 @@ function ProductDetails() {
               id="productBrandName"
               value={brandName}
               onChange={(e) => setProductBrandName(e.target.value)}
+              size="small"
             />
             <TextField
               label="Model Number"
@@ -196,6 +207,7 @@ function ProductDetails() {
               id="productModelNumber"
               value={modelNumber}
               onChange={(e) => setProductModelNumber(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -204,6 +216,7 @@ function ProductDetails() {
               id="productDiscount"
               value={discount}
               onChange={(e) => setProductDiscount(e.target.value)}
+              size="small"
             />
 
             <TextField
@@ -212,6 +225,7 @@ function ProductDetails() {
               id="productCountryofOrigin"
               value={countryofOrigin}
               onChange={(e) => setProductCountryofOrigin(e.target.value)}
+              size="small"
             />
           </Box>
         </Box>
