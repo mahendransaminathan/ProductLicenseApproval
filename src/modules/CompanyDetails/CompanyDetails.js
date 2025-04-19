@@ -136,6 +136,8 @@ function CompanyDetails() {
         <FormControl variant="outlined" fullWidth>
           <InputLabel id="country">Country</InputLabel>
           <Select
+            id="country"
+            name="country"            
             value={country}
             onChange={(e) => setCountry(e.target.value)}
             label="Country"
@@ -161,7 +163,7 @@ function CompanyDetails() {
           size="small"
         />
 
-        <Button type="submit" variant="contained" color="primary" fullWidth>
+        <Button type="submit" name="submit" variant="contained" color="primary" fullWidth>
           Submit
         </Button>
       </Box>
